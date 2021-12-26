@@ -111,6 +111,14 @@ ART模型允许丛集的个数可随著问题的大小而变动，并让使用�
 
 
 
+# 选择机器学习的方法
+
+![ml_map](doc/pic/README/ml_map.png)
+
+
+
+## classification
+
 
 
 
