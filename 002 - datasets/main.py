@@ -17,5 +17,5 @@ model.fit(data_X, data_y)
 print('用前四个数据预测一下值：')
 print(model.predict(data_X[:4, :]))
 
-print('用前四个数据的真实值：')
+print('前四个数据的真实值：')
 print(data_y[:4])
