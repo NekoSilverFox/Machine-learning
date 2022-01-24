@@ -463,6 +463,26 @@ A：因为我们在模型建立结束之后需要**对模型进行评估**，评
 
 ## 特征工程
 
+### sparse 稀疏矩阵
+
+**sparse 稀疏矩阵将非零值按位置表示出来**
+
+在类别很多的情况（比如特征值是`city`，它的类别就会有北京、上海、武汉、广东...） **one-hot 编码会出现 0 非常多的情况**；
+
+而 **sparse 稀疏矩阵将将非零值按位置表示出来可以极大的节省内存、提高加载效率**
+
+![image-20220124160937196](doc/pic/README/image-20220124160937196.png)
+
+*左为稀疏矩阵，右为 one-hot 矩阵*
+
+**sparse 稀疏矩阵的方法：**
+
+- `sparse稀疏矩阵.toarray()` **返回**该稀疏矩阵转换为的二维数组
+
+
+
+
+
 ### 特征工程提取 API
 
 ```python
@@ -500,7 +520,7 @@ sklearn.feature_extraction
 
 **转换器类 API：**
 
-**`sklearn.feature_extraction.DicVectorizer(sparse=True, ...)`** 其中 sparse 代表 sparse 稀疏矩阵矩阵
+**`sklearn.feature_extraction.DicVectorizer(sparse=True, ...)`** 其中 sparse 代表 sparse 稀疏矩阵
 
 ​	**实例化对象后，可以调用以下方法：**
 
@@ -549,7 +569,64 @@ data_fit:
 
 
 
+---
 
+
+
+### 文本特征提取
+
+**作用：对文本数据进行特征值化**
+
+
+
+#### 统计样本特征词出现频率（个数）
+
+**转换器类 API：**
+
+**`sklearn.feature_extraction.text.CountVectorizer(stop_word=[])`** 返回词频矩阵
+
+但是注意，这个 API 只能对英文有较好的分析，因为是用空格作为词与词之间的分隔，所以除非中文的各个词用空格分开，否则无法分析！
+
+​	**实例化对象后，可以调用以下方法：**
+
+- `CountVectorizer.fit_transform(文本或包含文本字符串的可迭代对象)` ***返回值：sparse 矩阵***
+- `CountVectorizer.inverse_transform(array 数组或 sparse 矩阵)`  ***返回值：转换之前的数据格式***
+- `CountVectorizer.get_feature_names_out()` ***返回值：单词列表***
+
+
+
+例子：
+
+- 对英文进行特征词词频提取
+
+```python
+def count_en_text_feature_extraction():
+    """
+    英文文本特征提取
+    :return:
+    """
+    data = ['life is short, i like python',
+            'life is too long, i dislike python']
+
+    # 1. 实例化转换器类
+    transfer = feature_extraction.text.CountVectorizer()
+
+    # 2. 调用 fit_transform
+    data_fit = transfer.fit_transform(data)
+    print('data_fit:\n', data_fit.toarray())  # 【重点】对于 sparse 矩阵，内部的 `.toarray()` 可以返回一个对应的二维数据
+    print('特征名字:\n', transfer.get_feature_names_out())
+    
+>>> 输出
+data_fit:
+ [[0 1 1 1 0 1 1 0]
+ [1 1 1 0 1 1 0 1]]
+特征名字:
+ ['dislike' 'is' 'life' 'like' 'long' 'python' 'short' 'too']
+```
+
+
+
+- 对中文进行特征词词频提取
 
 
 
