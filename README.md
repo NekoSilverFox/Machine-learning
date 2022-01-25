@@ -583,9 +583,9 @@ data_fit:
 
 **转换器类 API：**
 
-**`sklearn.feature_extraction.text.CountVectorizer(stop_word=[])`** 返回词频矩阵
+**`sklearn.feature_extraction.text.CountVectorizer(stop_words=[])`** 返回词频矩阵，`stop_words` 是停用词列表，指的是哪些词不纳入统计
 
-但是注意，这个 API 只能对英文有较好的分析，因为是用空格作为词与词之间的分隔，所以除非中文的各个词用空格分开，否则无法分析！
+注意，这个 API 只能对英文有较好的分析，因为是用空格作为词与词之间的分隔，所以除非中文的各个词用空格分开，否则无法分析，并且这里不支持单个中文字！
 
 ​	**实例化对象后，可以调用以下方法：**
 
@@ -627,6 +627,84 @@ data_fit:
 
 
 - 对中文进行特征词词频提取
+
+```python
+
+def count_cn_text_feature_extraction():
+    """
+    中文文本特征提取，注意，这个 API 只能对英文有较好的分析，因为是用空格作为词与词之间的分隔，所以除非中文的各个词用空格分开，否则无法分析！
+    :return:
+    """
+    data = ['我 爱 北京 天安门',
+            '天安门 上 太阳 升']
+
+    # 1. 实例化转换器类
+    transfer = feature_extraction.text.CountVectorizer()
+
+    # 2. 调用 fit_transform
+    data_fit = transfer.fit_transform(data)
+    print('data_fit:\n', data_fit.toarray())  # 【重点】对于 sparse 矩阵，内部的 `.toarray()` 可以返回一个对应的二维数据
+    print('特征名字:\n', transfer.get_feature_names_out())
+    
+>>> 输出
+data_fit:
+ [[1 1 0]
+ [0 1 1]]
+特征名字:
+ ['北京' '天安门' '太阳']
+```
+
+
+
+#### 统计中文样本中特征词频率（借助 jieba）
+
+由于中文的特殊性，需要先对样本进行语义分析，进行分词，然后才能进行特征词频率的分析
+
+```python
+import jieba
+from sklearn import feature_extraction
+
+
+def cut_chinese_str(text):
+    """
+    利用 jieba 对中文进行分词
+    :param text: 需要分词的字符串
+    :return: 分词结束的字符串
+    """
+
+    return ' '.join(list(jieba.cut(text)))
+
+
+def count_cn_text_jieba_feature_extraction():
+    """
+    中文文本特征提取，借助 jieba 进行分词
+    :return:
+    """
+    data = ['一种还是一种今天很残酷，明天更残酷，后天很美好，但绝对大部分是死在明天晚上，所以每个人不要放弃今天。',
+            '我们看到的从很远星系来的光是在几百万年之前发出的，这样当我们看到宇宙时，我们是在看它的过去。',
+            '如果只用一种方式了解某样事物，你就不会真正了解它。了解事物真正含义的秘密取決于如何将其与我们所了解的事物相联系。']
+
+    data_cut = []
+
+    # 1. 利用 jieba 进行分词
+    for str in data:
+        data_cut.append(cut_chinese_str(str))
+    print(data_cut)
+
+    # 2. 实例化一个转换器类
+    transfer = feature_extraction.text.CountVectorizer()
+
+    # 3. 调用 fit_transform
+    data_fit = transfer.fit_transform(data_cut)
+    print('data_fit: \n', data_fit.toarray())  # 【重点】对于 sparse 矩阵，内部的 `.toarray()` 可以返回一个对应的二维数据
+    print('特征名字:\n', transfer.get_feature_names_out())
+    pass
+
+
+if __name__ == '__main__':
+    count_cn_text_jieba_feature_extraction()
+
+```
 
 
 
