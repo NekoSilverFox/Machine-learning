@@ -559,7 +559,7 @@ sklearn.feature_extraction
 
 **转换器类 API：**
 
-**`sklearn.feature_extraction.DicVectorizer(sparse=True, ...)`** 其中 sparse 代表 sparse 稀疏矩阵
+transfer = **`sklearn.feature_extraction.DicVectorizer(sparse=True, ...)`** 其中 sparse 代表 sparse 稀疏矩阵
 
 ​	**实例化对象后，可以调用以下方法：**
 
@@ -814,7 +814,7 @@ TF-IDF 作用：用以评估一字词对于个文件集或一个语料库中的�
 ### 特征预处理 API
 
 ```python
-sklearn.perprocessing
+sklearn.preprocessing
 ```
 
 
