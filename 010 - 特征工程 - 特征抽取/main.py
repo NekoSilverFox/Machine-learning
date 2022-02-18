@@ -34,7 +34,7 @@ def count_en_text_feature_extraction():
 
     # 2. 调用 fit_transform
     data_fit = transfer.fit_transform(data)
-    print('data_fit:\n', data_fit.toarray())  # 【重点】对于 sparse 矩阵，内部的 `.toarray()` 可以返回一个对应的二维数据
+    print('data_fit:\n', data_fit.toarray(), type(data_fit.toarray()))  # 【重点】对于 sparse 矩阵，内部的 `.toarray()` 可以返回一个对应的二维数据 numpy.ndarray
     print('特征名字:\n', transfer.get_feature_names_out())
 
 

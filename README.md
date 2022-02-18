@@ -25,7 +25,7 @@
 
 ## 人工智能、机器学习、深度学习的关系
 
-![image-20211228165701734](doc/pic/README/image-20211228165701734.png)
+<img src="doc/pic/README/image-20211228165701734.png" alt="image-20211228165701734" style="zoom:50%;" />
 
 - 机器学习和人工智能，深度学习的关系
 
@@ -33,7 +33,7 @@
 
     深度学习是机器学习的一个方法（神经网络）发展而来
 
-![image-20211228171230823](doc/pic/README/image-20211228171230823.png)
+<img src="doc/pic/README/image-20211228171230823.png" alt="image-20211228171230823" style="zoom:50%;" />
 
 
 
@@ -43,21 +43,25 @@
 
 也就是说，通过**数据**来得到一个**模型**，然后再拿着这个模型去**预测**
 
-![image-20211228171519821](doc/pic/README/image-20211228171519821.png)
+<img src="doc/pic/README/image-20211228171519821.png" alt="image-20211228171519821" style="zoom:50%;" />
 
  
 
 ## 机器学习应用场景
 
-![image-20211228170732036](doc/pic/README/image-20211228170732036.png)
+<img src="doc/pic/README/image-20211228170732036.png" alt="image-20211228170732036" style="zoom:50%;" />
 
 - 用在挖掘、预测领域：
 
     ​	应用场景：店铺销量预测、量化投资、广告推荐、企业客户分类、SQL语句安全检测分类...
 
+    
+
 - 用在图像领域：
 
     ​	应用场景：街道交通标志检测、人脸识别等等
+
+    
 
 - 用在自然语言处理领域：
 
@@ -65,26 +69,7 @@
 
 
 
-## 数据集
-
-在明确了机器学习的相关概念后，我们知道机器学习需要有数据来训练模型，那么我们的数据又是如何构成的呢？格式又是如何？
-
-- **结构：特征值 + 目标值**
-
-    - 对于**每一行数据**我们可以称之为**样本**
-    - 有些数据集可以没有目标值
-
-    
-
-    比如下图的房屋数据：
-
-    **特征值**就可以看作是房屋的面积、位置、楼层、朝向
-
-    **目标值**就可以看做是房屋的价格
-
-    ![image-20211228172647016](doc/pic/README/image-20211228172647016.png)
-
-
+---
 
 
 
@@ -99,7 +84,7 @@
 |                            | **没有目标值**                   | **聚类**（无监督学习）   | k-means                                            |
 |                            |                                  |                          |                                                    |
 
-![image-20211228175206865](doc/pic/README/image-20211228175206865.png)
+<img src="doc/pic/README/image-20211228175206865.png" alt="image-20211228175206865" style="zoom:50%;" />
 
 
 
@@ -109,13 +94,19 @@
 
     ​	回归问题
 
+    
+
 - 预测明天是阴、晴还是雨？
 
     ​	分类问题
 
+    
+
 - 人脸年龄预测？
 
     ​	回归或分类，取决如如何定义年龄
+
+    
 
 - 人脸识别？
 
@@ -125,19 +116,19 @@
 
 
 
-## 机器学习类型（算法）的具体描述
+## 机器学习类型（算法）描述
 
-| 类型       | 特点                               |
-| ---------- | ---------------------------------- |
-| 监督学习   | 有数据、有标签                     |
-| 非监督学习 | 有数据、无标签                     |
-| 半监督学习 | 结合监督学习和非监督学习           |
-| 强化学习   | 从经验中总结提升                   |
-| 遗传算法   | 和强化学习类似，适者生存不适者淘汰 |
+| 类型       | 特点                               | 定义或是由                                                   | 代表                                                         |
+| ---------- | ---------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| 监督学习   | 有数据、有标签                     | **输入的数据是由特征值和目标值**所构成。**函数的输出可以是一个连续的值（称为回归）**或是**输出是有限个离散值（称作分类）** | **分类：**<br />k-临近算法、贝叶斯分类、决策树与随机森林、逻辑回归<br /><br />**回归：**<br />线性回归、岭回归 |
+| 非监督学习 | 有数据、无标签                     | **输入的数据是由特征值和目标值**所构成                       | 聚类：<br />k-means                                          |
+| 半监督学习 | 结合监督学习和非监督学习           |                                                              |                                                              |
+| 强化学习   | 从经验中总结提升                   |                                                              |                                                              |
+| 遗传算法   | 和强化学习类似，适者生存不适者淘汰 |                                                              |                                                              |
 
 
 
-### 监督学习（Supervised learning）
+### 监督学习
 
 **监督学习**（英语：Supervised learning），又叫有监督学习，监督式学习，是[机器学习](https://zh.wikipedia.org/wiki/机器学习)的一种方法，可以由训练资料中学到或建立一个模式（函数 / learning model），并依此模式推测新的实例。[[1\]](https://zh.wikipedia.org/wiki/监督学习#cite_note-1)[训练资料](https://zh.wikipedia.org/wiki/訓練資料)是由输入物件（通常是向量）和预期输出所组成。函数的输出可以是一个连续的值（称为[回归分析](https://zh.wikipedia.org/wiki/迴歸分析)），或是预测一个分类标签（称作[分类](https://zh.wikipedia.org/wiki/分类)）。
 
@@ -165,7 +156,7 @@
 
 
 
-### 无监督学习（unsupervised learning）
+### 无监督学习
 
 **无监督学习**（英语：unsupervised learning）是[机器学习](https://zh.wikipedia.org/wiki/机器学习)的一种方法，没有给定事先标记过的训练范例，自动对输入的资料进行分类或分群。无监督学习的主要运用包含：[聚类分析](https://zh.wikipedia.org/wiki/聚类分析)（cluster analysis）、[关联规则](https://zh.wikipedia.org/wiki/关联规则学习)（association rule）、维度缩减（dimensionality reduce）。它是[监督式学习](https://zh.wikipedia.org/wiki/監督式學習)和[强化学习](https://zh.wikipedia.org/wiki/强化学习)等策略之外的一种选择。
 
@@ -183,7 +174,7 @@ ART模型允许丛集的个数可随著问题的大小而变动，并让使用�
 
 
 
-### 半监督学习（Semi-supervised learning）
+### 半监督学习
 
 **半监督学习**是一种[机器学习](https://en.wikipedia.org/wiki/Machine_learning)方法，它在训练过程中将少量[标记数据](https://en.wikipedia.org/wiki/Labeled_data)与大量未标记数据相结合。半监督学习介于[无监督学习](https://en.wikipedia.org/wiki/Unsupervised_learning)（没有标记的训练数据）和[监督学习](https://en.wikipedia.org/wiki/Supervised_learning)（只有标记的训练数据）之间。它是[弱监督的](https://en.wikipedia.org/wiki/Weak_supervision)一个特例。
 
@@ -195,7 +186,7 @@ ART模型允许丛集的个数可随著问题的大小而变动，并让使用�
 
 
 
-### 强化学习（Reinforcement learning）
+### 强化学习
 
 **强化学习**（英语：Reinforcement learning，简称RL）是[机器学习](https://zh.wikipedia.org/wiki/机器学习)中的一个领域，强调如何基于[环境](https://zh.wikipedia.org/wiki/环境)而行动，以取得最大化的预期利益[[1\]](https://zh.wikipedia.org/wiki/强化学习#cite_note-1)。强化学习是除了[监督学习](https://zh.wikipedia.org/wiki/监督学习)和[非监督学习](https://zh.wikipedia.org/w/index.php?title=非监督学习&action=edit&redlink=1)之外的第三种基本的机器学习方法。与监督学习不同的是，强化学习不需要带标签的输入输出对，同时也无需对非最优解的精确地纠正。其关注点在于寻找探索（对未知领域的）和利用（对已有知识的）的平衡[[2\]](https://zh.wikipedia.org/wiki/强化学习#cite_note-kaelbling-2)，强化学习中的“探索-利用”的交换，在[多臂老虎机](https://zh.wikipedia.org/w/index.php?title=多臂老虎机&action=edit&redlink=1)问题和有限MDP中研究得最多。。
 
@@ -213,7 +204,7 @@ ART模型允许丛集的个数可随著问题的大小而变动，并让使用�
 
 
 
-### 遗传算法（Genetic Algorithm）
+### 遗传算法
 
 **遗传算法**（英语：Genetic Algorithm, **GA** ）是[计算数学](https://zh.wikipedia.org/wiki/计算数学)中用于解决[最佳化](https://zh.wikipedia.org/wiki/最佳化)的搜索[算法](https://zh.wikipedia.org/wiki/算法)，是[进化算法](https://zh.wikipedia.org/wiki/进化算法)的一种。进化算法最初是借鉴了[进化生物学](https://zh.wikipedia.org/wiki/进化生物学)中的一些现象而发展起来的，这些现象包括[遗传](https://zh.wikipedia.org/wiki/遗传)、[突变](https://zh.wikipedia.org/wiki/突变)、[自然选择](https://zh.wikipedia.org/wiki/自然选择)以及[杂交](https://zh.wikipedia.org/wiki/杂交)等等。
 
@@ -229,12 +220,12 @@ ART模型允许丛集的个数可随著问题的大小而变动，并让使用�
 
 ## 开发流程
 
-![image-20211228220833060](doc/pic/README/image-20211228220833060.png)
+<img src="doc/pic/README/image-20211228220833060.png" alt="image-20211228220833060" style="zoom:50%;" />
 
 1. 获取数据
-2. 数据处理
+2. 数据处理（处理缺失值等）
 3. 特征工程（将数据处理为算法能够使用的数据；特征就是特征值）
-4. 机器学习算法进行训练（fit） --> 得到模型
+4. 使用机器学习算法进行训练（fit） --> 得到模型
 5. 模型评估，如果模型不好返回第 2 步继续循环，直到模型评估比较好
 
 
@@ -272,16 +263,38 @@ ART模型允许丛集的个数可随著问题的大小而变动，并让使用�
 
 ## 数据集
 
-### 可用数据集
+在明确了机器学习的相关概念后，我们知道机器学习需要有数据来训练模型，那么我们的数据又是如何构成的呢？格式又是如何？
 
-- Sklearn
-    - Python语言的机器学习工具
-    - Scikit-learn 包括许多知名的机器学习算法的实现
-    - Scikit-learn文档完善，容易上手，丰富的API
-- Kaggle
-- UCI
+- **结构：特征值 + 目标值**
 
-![image-20211228230707442](doc/pic/README/image-20211228230707442.png)
+    - 对于**每一行数据**我们可以称之为**样本**
+    - 有些数据集可以没有目标值
+
+    
+
+    比如下图的房屋数据：
+
+    **特征值**就可以看作是房屋的面积、位置、楼层、朝向
+
+    **目标值**就可以看做是房屋的价格
+
+    <img src="doc/pic/README/image-20211228172647016.png" alt="image-20211228172647016" style="zoom:50%;" />
+
+
+
+- **可用数据集**
+
+    - Sklearn
+        - Python语言的机器学习工具
+        - Scikit-learn 包括许多知名的机器学习算法的实现
+        - Scikit-learn文档完善，容易上手，丰富的API
+
+    - Kaggle
+
+    - UCI
+
+
+<img src="doc/pic/README/image-20211228230707442.png" alt="image-20211228230707442" style="zoom:50%;" />
 
 
 
@@ -308,6 +321,8 @@ ART模型允许丛集的个数可随著问题的大小而变动，并让使用�
 
 
 
+---
+
 ### 特征抽取（提取）
 
 特征值化是为了让计算机更好的去理解数据；将任意数据（图像或文本）转换为可用于机器学习的数字特征
@@ -318,17 +333,17 @@ ART模型允许丛集的个数可随著问题的大小而变动，并让使用�
 - 文本特征提取
 - 图像特征提取（深度学习）
 
-
+---
 
 ### 特征预处理
 
 **目标：**
 
 - 了解数值型数据、类别型数据特点
-- 应用 MinMaxScaler 实现对特征数据进行**归一化**
-- 应用 StandardScaler 实现对特征数据进行**标准化**
+- 应用 `MinMaxScaler` 实现对特征数据进行**归一化**
+- 应用 `StandardScaler` 实现对特征数据进行**标准化**
 
-![image-20220125164821285](doc/pic/README/image-20220125164821285.png)
+<img src="doc/pic/README/image-20220125164821285.png" alt="image-20220125164821285" style="zoom:50%;" />
 
 可见，**特征预处理**就是通过一些转换函数将特征数据转换成更加适合算法模型的特征图数据过程
 
@@ -340,6 +355,8 @@ ART模型允许丛集的个数可随著问题的大小而变动，并让使用�
 
     通过对原始数据进行变换把数据映射到（默认[0, 1]）之间
 
+    
+
 - **标准化**
 
 
@@ -349,15 +366,146 @@ ART模型允许丛集的个数可随著问题的大小而变动，并让使用�
 - 简而言之就是要**统一数量级**，比如在做物理或数学题时我们要把数值的数量级或单位进行统一**使数据无量纲化**。
 - 特征的单位或者大小相差较大，或者某特征的方差相比其他的特征要大出几个数量级，容易影响（支配）目标结果，使得一些算法无法学习到其它的特征
 
+
+
+---
+
+
+
+
+
 # sklearn
 
 ## 选择 sklearn 的机器学习算法
 
 ![ml_map](doc/pic/README/ml_map.png)
 
+<img src="doc/pic/README/image-20220217203643291.png" alt="image-20220217203643291" style="zoom:50%;" />
+
+---
 
 
-## sklean 数据集（datasets）
+
+## sklearn-API 汇总
+
+**数据集部分：**
+
+- **【数据结构】`database.base.Bunch`**
+
+    `load` 和 `fetch` **返回**的数据类型是 `datasets.base.Bunch` 也就是一种**基于字典的格式（带有键值对 key-value）** ，可以使用`dict['key']` 和 `bunch.key` 两种方式获得数值
+
+    - `data` - **特征数据数组**，是 `[n_sample * n_sample]` 的二维 **numpy.ndarray** 数组
+    - `target` - **目标值数组**，是 n_samples 的一维 **numpy.ndarray** 数组
+    - `DESCR` - **数据描述**
+    - `feature_namees` - **特征名**；比如：手写数字、新闻数据、回归数据集
+    - `target_names` - **目标值名**
+
+    
+
+- **数据集加载/生成**
+
+    ```pytohn
+    sklearn.database
+    ```
+
+    | 函数/方法                                                    | 描述                                                         |
+    | ------------------------------------------------------------ | ------------------------------------------------------------ |
+    | `database.load_*()`                                          | **返回**小数据集，**返回**的数据类型是 `datasets.base.Bunch` |
+    | `database.fetch_*(datahome=数据集保存到, subset='all')`      | 先从网络下载，再**返回**大数据集；<br />`data_home=`数据集保存路径，默认 `~/sklearn_learn_data`<br />`subset=`加载哪些集合：`all`所有；`train` 训练集；`test`测试集 |
+    | `dataset.make_*(n_samples=数据量, n_features=特征数, n_targets=目标值数, noise=噪声)` | **返回**生成的随机的模拟数据                                 |
+
+    
+
+- **数据集划分：**
+
+    ```python
+    sklearn.model_selection
+    ```
+
+    `x_train, x_test, y_train, y_test = sklearn.model_selection.train_test_split(x=特征值, y=目标值, test_size=0.25, random_state=随机种子)`
+
+    **务必要注意返回值的顺序**
+
+    - `X` 特征值
+
+    - `y` 目标值
+
+    - `test_size` 测试集的占比，一般为 float，默认为 0.25
+
+    - `random_state` 随机数种子，不同的种子会造成不同的随机采样结果。相同的种子得到的采样结果相同
+
+    - `return` 返回值：
+
+        **`X` 代表特征值，`y` 代表目标值**
+    
+        **`train` 代表训练集，`test` 代表测试集**
+    
+        1. 特征值（训练集） - `X_train`
+        2. 特征值（测试集） - `X_test`
+        3. 目标值（训练集） - `y_train`
+        4. 目标值（测试集） - `y_test`
+    
+    **我们通常取数据的 20% 对模型进行评估（用作测试集）**，sklearn 对模型进行划分时默认是取总数据的 25% 用作测试（训练集）
+
+
+
+---
+
+
+
+**特征工程部分：**
+
+- **sparse** 稀疏矩阵
+
+    | 方法               | 描述                                             |
+    | ------------------ | ------------------------------------------------ |
+    | `sparse.toarray()` | **返回** sparse 稀疏矩阵对应的 **numpy.ndarray** |
+    |                    |                                                  |
+    |                    |                                                  |
+
+
+
+- **特征提取**
+
+    ```python
+    sklearn.feature_extraction
+    ```
+
+    1. **根据数据的格式调用对应的 API，得到相应的转换器对象**
+
+        | 转换器                                                       | 描述                                                         |
+        | ------------------------------------------------------------ | ------------------------------------------------------------ |
+        | `dic_transfer =`<br />` sklearn.feature_extraction.DicVectorizer(sparse=True, ...)` | **返回*****字典特征提取***的转换器对象<br />`sparse`是否为稀疏矩阵，默认为 True |
+        | `count_transfer = `<br />`sklearn.feature_extraction.text.CountVectorizer(stop_words=[停用词列表])` | **返回**词频对应的离散化后的矩阵（词频矩阵）                 |
+        | `tfidf_transfer = `<br />`sklearn.feature_extraction.text.TfidfVectorizer(stop_words=[停用词列表])` | **返回**文本中关键词对应的离散化后的矩阵                     |
+
+        
+
+    2. **调用转换器中的方法**
+
+        | 方法                                                         | 描述                             |
+        | ------------------------------------------------------------ | -------------------------------- |
+        | `*_transfer.fit_transform(对应数据或包含对应数据的可迭代对象)` | **返回**字典对应的离散化后的矩阵 |
+        | `*_transfer.inverse_transform(ndarray 数组或 sparse 矩阵)`   | **返回**转换之前的数据格式       |
+        | `*_transfer.get_feature_names_out()`                         | **返回**特征值名称列表           |
+
+        
+
+- **特征预处理**
+
+    ```python
+    sklearn.preprocessing
+    ```
+
+    | 方法 | 描述 |
+    | ---- | ---- |
+    |      |      |
+    |      |      |
+    |      |      |
+
+    
+
+## sklean 数据集
 
 ### 数据集 API 介绍
 
@@ -366,8 +514,13 @@ ART模型允许丛集的个数可随著问题的大小而变动，并让使用�
 > https://scikit-learn.org/stable/modules/classes.html?highlight=dataset#module-sklearn.datasets
 
 - `sklearn.datasets` - 数据集 API 
-    - 加载流行数据集
+  
+    **加载流行数据集：**
+    
     - `datasets.load_*()` - **获取（load）小**规模数据集，数据包在 datasets 中
+    
+    
+    
     - `datasets.fetch_*(data_home=None)` - **加载（fetch）大**规模数据集。因为数据集很大，需要从网上下载。函数的第一个参数为 `data_home`，表示数据集下载的目录，默认是 `~/sklearn_learn_data`
 
 
@@ -415,13 +568,13 @@ ART模型允许丛集的个数可随著问题的大小而变动，并让使用�
 
 ### sklearn 数据集返回值
 
-`load` 和 `fetch` 返回的数据类型是 `datasets.base.Bunch` 也就是**字典格式（带有键值对 key-value）**
+`load` 和 `fetch` **返回**的数据类型是 `datasets.base.Bunch` 也就是一种**基于字典的格式（带有键值对 key-value）** ，可以使用`dict['key']` 和 `bunch.key` 两种方式获得数值
 
-- `data` - **特征数据数组**，是 `[n_sample * n_sample]` 的二维 numpy.ndarray 数组
-- `target` - **标签数组**，是 n_samples 的一维 numpy.ndarray 数组
+- `data` - **特征数据数组**，是 `[n_sample * n_sample]` 的二维 **numpy.ndarray** 数组
+- `target` - **目标值数组**，是 n_samples 的一维 **numpy.ndarray** 数组
 - `DESCR` - **数据描述**
 - `feature_namees` - **特征名**；比如：手写数字、新闻数据、回归数据集
-- `target_names` - **标签名**
+- `target_names` - **目标值名**
 
 ```python
 from sklearn import datasets
@@ -451,25 +604,31 @@ Q：为什么要对数据进行划分？
 
 A：因为我们在模型建立结束之后需要**对模型进行评估**，评估这些模型需要真实的不同数据，也就是说我们不能拿用于建立模型的数据进行模型的测试
 
+
+
 **机器学习一般的数据集会划分为 2 个部分：**
 
 - 训练数据：用于训练，构建**模型**
 - 测试数据：在模型检验使用，用于**评估模型是否有效**
+
+
 
 **划分比例：**
 
 - 训练集：70% ~ 80%
 - 测试集：20% ~ 30%
 
+
+
 **数据集划分 API：**
 
-`sklearn.model_selection.train_test_split(array, *options)`
+`x_train, x_test, y_train, y_test = sklearn.model_selection.train_test_split(x=特征值, y=目标值, test_size=0.25, random_state=随机种子)`
 
 - `X` 数据集的特征值
 
 - `y` 数据集的目标值
 
-- `test_size` 测试集的大小，一般为 float
+- `test_size` 测试集的大小，一般为 float，默认为 0.25
 
 - `random_state` 随机数种子，不同的种子会造成不同的随机采样结果。相同的种子得到的采样结果相同
 
@@ -479,10 +638,10 @@ A：因为我们在模型建立结束之后需要**对模型进行评估**，评
 
     **`train` 代表训练集，`test` 代表测试集**
 
-    - 训练集的特征值 - `X_train`
-    - 测试集的特征值 - `X_test`
-    - 训练集的目标值 - `y_train`
-    - 测试集的目标值 - `y_test`
+    1. 特征值（训练集） - `X_train`
+    2. 特征值（测试集） - `X_test`
+    3. 目标值（训练集） - `y_train`
+    4. 目标值（测试集） - `y_test`
 
 **我们通常取数据的 20% 对模型进行评估（用作测试集）**，sklearn 对模型进行划分时默认是取总数据的 25% 用作测试（训练集）
 
@@ -510,15 +669,19 @@ A：因为我们在模型建立结束之后需要**对模型进行评估**，评
 
 而 **sparse 稀疏矩阵将将非零值按位置表示出来可以极大的节省内存、提高加载效率**
 
-![image-20220124160937196](doc/pic/README/image-20220124160937196.png)
+<img src="doc/pic/README/image-20220124160937196.png" alt="image-20220124160937196" style="zoom:50%;" />
 
 *左为稀疏矩阵，右为 one-hot 矩阵*
+
+
 
 **sparse 稀疏矩阵的方法：**
 
 - `sparse稀疏矩阵.toarray()` **返回**该稀疏矩阵转换为的二维数组
 
 
+
+---
 
 
 
@@ -532,7 +695,9 @@ sklearn.feature_extraction
 
 ### 字典特征提取
 
-**作用：对字典数据进行特征值化，对于字典中的类别可以转换为 one-hot 编码**
+**作用：对字典数据进行特征值化，对于字典中的类别可以转换为 one-hot 编码**（数据离散化）
+
+
 
 **应用场景：**
 
@@ -551,7 +716,7 @@ sklearn.feature_extraction
 >
 > 而 **sparse 稀疏矩阵将将非零值按位置表示出来可以极大的节省内存、提高加载效率**
 >
-> ![image-20220124160937196](doc/pic/README/image-20220124160937196.png)
+> <img src="doc/pic/README/image-20220124160937196.png" alt="image-20220124160937196" style="zoom:50%;" />
 >
 > *左为稀疏矩阵，右为 one-hot 矩阵*
 
@@ -559,13 +724,13 @@ sklearn.feature_extraction
 
 **转换器类 API：**
 
-transfer = **`sklearn.feature_extraction.DicVectorizer(sparse=True, ...)`** 其中 sparse 代表 sparse 稀疏矩阵
+**`transfer = sklearn.feature_extraction.DicVectorizer(sparse=True, ...)`** 其中 sparse 代表 sparse 稀疏矩阵
 
 ​	**实例化对象后，可以调用以下方法：**
 
-- `DicVectorizer.fit_transform(字典或包含字典的迭代器)` ***返回值：sparse 矩阵***
-- `DicVectorizer.inverse_transform(array 数组或 sparse 矩阵)`  ***返回值：转换之前的数据格式***
-- `DicVectorizer.get_feature_names_out()` ***返回值：类别名称***
+- `DicVectorizer.fit_transform(字典或包含字典的迭代器)` **返回**sparse 矩阵
+- `DicVectorizer.inverse_transform(array 数组或 sparse 矩阵)`  **返回**转换之前的数据格式
+- `DicVectorizer.get_feature_names_out()` **返回**特征值名称
 
 
 
@@ -797,7 +962,11 @@ TF-IDF 作用：用以评估一字词对于个文件集或一个语料库中的�
 
 **转换器类 API：**
 
-**`sklearn.feature_extraction.text.TfidfVectorizer(stop_words=[])`** 返回词频矩阵，`stop_words` 是停用词列表，指的是哪些词不纳入统计
+**`sklearn.feature_extraction.text.TfidfVectorizer(stop_words=[])`** **返回**词频矩阵
+
+- `stop_words` 是停用词列表，指的是哪些词不纳入统计
+
+
 
 注意，这个 API 只能对英文有较好的分析，因为是用空格作为词与词之间的分隔，所以除非中文的各个词用空格分开，否则无法分析，并且这里不支持单个中文字！
 
@@ -810,6 +979,10 @@ TF-IDF 作用：用以评估一字词对于个文件集或一个语料库中的�
 
 
 ## 特征工程 - 特征预处理
+
+特征工程是使用专业背景知识和技巧处理数据，使得特征能在机器学习算法上发挥更好的作用的过程。会直接影响机器学习的效果
+
+
 
 ### 特征预处理 API
 
@@ -857,7 +1030,7 @@ sklearn.preprocessing
 
 
 
-
+o
 
 
 
