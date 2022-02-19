@@ -998,12 +998,14 @@ sklearn.preprocessing
 
 ​	通过对原始数据进行变换把数据映射到固定区间（默认[0, 1]）之内
 
+
+
 **公式：**
 
-![image-20220125171413298](doc/pic/README/image-20220125171413298.png)
+<img src="doc/pic/README/image-20220125171413298.png" alt="image-20220125171413298" style="zoom:33%;" />
 
-- 对于每一列， *max* 为一列的最大值，*min* 为一列的最小值
-- *mx, mi* 分别指定映射到区间的最小值或最大值（*默认 mx=1, mi=0*）
+- 对于每一**列**， *max* 为一列的最大值，*min* 为一列的最小值
+- *mx, mi* 分别指定**映射到区间的最小值或最大值**（*默认 mx=1, mi=0*）
 - *X''* 为最终结果
 
 
@@ -1014,7 +1016,7 @@ sklearn.preprocessing
 
 ​	**实例化后可以调用：**
 
-- `MinMaxScaler.fit_transform(numpy-array 格式的二维数组数据[n_samples 类别, n_features 特征值])` ***返回值：归一化后形状相同的 array***
+- `MinMaxScaler.fit_transform(ndarray格式的二维数组数据[n_samples 类别, n_features 特征值])` **返回**归一化后形状相同的 ndarray
 
     
 
@@ -1030,7 +1032,7 @@ sklearn.preprocessing
 
 
 
-o
+
 
 
 
