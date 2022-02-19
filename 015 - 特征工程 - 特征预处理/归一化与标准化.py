@@ -2,7 +2,7 @@
 # @Time    : 2022/1/25 19:41
 # @Author  : 冰糖雪狸 (NekoSilverfox)
 # @Project : Scikit-learn
-# @File    : 归一化.py
+# @File    : 归一化与标准化.py
 # @Software: PyCharm
 # @Github  ：https://github.com/NekoSilverFox
 # -----------------------------------------
@@ -30,8 +30,27 @@ def min_max():
     print(data_minmax)
 
 
+def standar():
+    """
+    标准化
+    标准化适用于现代嘈杂的大数据场景
+    :return:
+    """
+    # 1. 获取数据
+    data = pd.read_csv('dating.txt')
+
+    # 2. 截取数据
+    data = data.iloc[:, :3]
+
+    # 3.标准化
+    transfer = preprocessing.StandardScaler()
+    data_new = transfer.fit_transform(data)
+
+    print(data_new)
+
 
 if __name__ == '__main__':
-    min_max()
+    # min_max()
+    standar()
 
     pass
