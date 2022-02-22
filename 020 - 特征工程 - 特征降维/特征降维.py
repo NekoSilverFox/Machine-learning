@@ -8,6 +8,7 @@
 # -----------------------------------------
 import pandas as pd
 from sklearn import feature_selection
+from scipy.stats import pearsonr
 
 
 def varince():
@@ -30,6 +31,10 @@ def varince():
     # 4. 调用 fit_transform
     data_new = transfer.fit_transform(data)
     print(data_new, data_new.shape)
+
+    # 计算皮尔逊相关系数
+    r = pearsonr(x=data['pe_ratio'], y=data['pb_ratio'])
+    print('相关系数：', r)
 
 
 if __name__ == '__main__':
