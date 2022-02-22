@@ -9,11 +9,12 @@
 import pandas as pd
 from sklearn import feature_selection
 from scipy.stats import pearsonr
+from sklearn import decomposition
 
 
 def varince():
     """
-    特征工程 - 特征降维 - 特征选择 - 低方差过滤
+    特征工程 - 特征降维 - 特征选择 - 【低方差过滤】
     :return:
     """
     # 1. 获取数据
@@ -33,10 +34,37 @@ def varince():
     print(data_new, data_new.shape)
 
     # 计算皮尔逊相关系数
-    r = pearsonr(x=data['pe_ratio'], y=data['pb_ratio'])
-    print('相关系数：', r)
+    r1 = pearsonr(x=data['pe_ratio'], y=data['pb_ratio'])
+    print('相关系数：', r1)
+
+    r2 = pearsonr(x=data['revenue'], y=data['total_expense'])
+    print('相关系数：', r2)
+
+
+def pca_demo():
+    """
+    对数据进行主成分分析（PCA）降维
+    :return:
+    """
+
+    # 1. 获取数据
+    data = [[2, 8, 4, 5], [6, 3, 0, 8], [5, 4, 9, 1]]
+
+    # 2. 获取转换器对象
+    # transfer = decomposition.PCA(n_components=3)  # **整数：**减少到多少特征
+    transfer = decomposition.PCA(n_components=0.9)  # **小数**：表示保留百分之多少的信息
+
+    # 3. 调用 fit_transform
+    data_new = transfer.fit_transform(data)
+    print(data_new)
+
 
 
 if __name__ == '__main__':
-    varince()
+    # 低方差过滤
+    # varince()
+
+    # PCA - 主成分分析
+    pca_demo()
     pass
+
