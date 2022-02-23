@@ -1313,6 +1313,40 @@ $$
 
 
 
+---
+
+**【案例】探究用户对物品类别的喜好细分**
+
+应用pca和K-means实现用户对物品类别的喜好细分划分
+
+数据如下：
+
+- order_products_prior.csv：订单与商品信息
+    - 字段：**order_id**, **product_id**, add_to_cart_order, reordered
+- products.csv：商品信息
+    - 字段：**product_id**, product_name, **aisle_id**, department_id
+- orders.csv：用户的订单信息
+    - 字段：**order_id**,**user_id**,eval_set,order_number,….
+- aisles.csv：商品所属具体物品类别
+    - 字段： **aisle_id**, **aisle**
+
+
+
+**分析：**
+
+- 1.获取数据
+- 2.数据基本处理
+    - 2.1 合并表格
+    - 2.2 交叉表合并
+    - 2.3 数据截取
+- 3.特征工程 — pca
+- 4.机器学习（k-means）
+- 5.模型评估
+    - sklearn.metrics.silhouette_score(X, labels)
+        - 计算所有样本的平均轮廓系数
+        - X：特征值
+        - labels：被聚类标记的目标值
+
 
 
 
