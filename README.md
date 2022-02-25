@@ -1349,6 +1349,68 @@ $$
 
 
 
+---
+
+
+
+## 分类算法
+
+Q:如何判定属于分类问题？
+
+A:没有目标值
+
+
+
+
+
+### 转换器
+
+回顾之前特征工程那里的步骤：
+
+1. 实例化 `transfer` 转换器对象
+2. 调用 `transfer` 的 `.fit_transform(data)` 对象
+
+
+
+其实这里的 `fit_transform()` 可以拆分为：
+
+1. `fit()` 通常进行了计算，平均值、标准差等
+2. `transform()` 进行最终的转换
+
+
+
+### 估计器
+
+**在 sklearn 中，估计器（estimator）是一个重要的角色，是一类实现了算法的 API**
+
+- 用于**分类**的估计器
+
+    | 估计器                                    | 描述             |
+    | ----------------------------------------- | ---------------- |
+    | `sklearn.neighbors`                       | k-临近算法       |
+    | `sklearn.naive_bayes`                     | 贝叶斯算法       |
+    | `sklearn.linear_model.LogisticRegression` | 逻辑回归         |
+    | `sklearn.tree`                            | 决策树与回归森林 |
+
+    
+
+- 用于**回归**的估计器
+
+    | 估计器                                  | 描述     |
+    | --------------------------------------- | -------- |
+    | `sklearn.linear_model.LinearRegression` | 线性回归 |
+    | `sklearn.linear_model.Ridge`            | 岭回归   |
+
+    
+
+- 用于**无监督学习**的估计器
+
+    | 估计器                   | 描述     |
+    | ------------------------ | -------- |
+    | `sklearn.cluster.KMeans` | 聚类算法 |
+
+    
+
 
 
 
