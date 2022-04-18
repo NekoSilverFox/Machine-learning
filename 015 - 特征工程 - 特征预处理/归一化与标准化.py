@@ -20,14 +20,15 @@ def min_max():
 
     # 1. 利用 Pandas 截取数据（注意，这里只需要对特征值进行归一化，而目标值不需要）
     data = data.iloc[:, :3]
-    print(data)
+
+    print('data\n', data)
 
     # 3. 获取转换器
     transfer = preprocessing.MinMaxScaler(feature_range=(0, 1))
 
     # 4. 进行归一化
     data_minmax = transfer.fit_transform(data)
-    print(data_minmax)
+    print('data_minmax\n', data_minmax)
 
 
 def standar():
@@ -50,7 +51,7 @@ def standar():
 
 
 if __name__ == '__main__':
-    # min_max()
-    standar()
+    min_max()
+    # standar()
 
     pass
