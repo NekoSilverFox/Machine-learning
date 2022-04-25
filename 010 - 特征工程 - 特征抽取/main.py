@@ -56,6 +56,6 @@ def count_cn_text_feature_extraction():
 
 
 if __name__ == '__main__':
-    # dic_feature_extraction()
-    count_en_text_feature_extraction()
-    count_cn_text_feature_extraction()
+    dic_feature_extraction()
+    # count_en_text_feature_extraction()
+    # count_cn_text_feature_extraction()
