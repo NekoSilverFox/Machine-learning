@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7190a85b-e59c-461c-8efb-4f4ee5b77b1c" name="变更" comment="增加 105 - 朴素贝叶斯算法">
+    <list default="true" id="7190a85b-e59c-461c-8efb-4f4ee5b77b1c" name="变更" comment="增加 lab1 中的第一题（朴素贝叶斯算法对测试集和预测集准确率）">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/010 - 特征工程 - 特征抽取/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/010 - 特征工程 - 特征抽取/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/100 - SPbSTU - lab1/100 - SPbSTU - lab1.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/100 - SPbSTU - lab1/100 - SPbSTU - lab1.ipynb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,7 +115,7 @@
       <option name="presentableId" value="Default" />
       <updated>1650794923673</updated>
       <workItem from="1650794926615" duration="2252000" />
-      <workItem from="1650832161884" duration="3808000" />
+      <workItem from="1650832161884" duration="4886000" />
     </task>
     <task id="LOCAL-00002" summary="增加 105">
       <created>1650833138528</created>
@@ -133,7 +131,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650833165418</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="增加 lab1 中的第一题（朴素贝叶斯算法对测试集和预测集准确率）">
+      <created>1650881614591</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1650881614591</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -154,7 +159,8 @@
     <MESSAGE value="更新 ignore" />
     <MESSAGE value="增加 105" />
     <MESSAGE value="增加 105 - 朴素贝叶斯算法" />
-    <option name="LAST_COMMIT_MESSAGE" value="增加 105 - 朴素贝叶斯算法" />
+    <MESSAGE value="增加 lab1 中的第一题（朴素贝叶斯算法对测试集和预测集准确率）" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加 lab1 中的第一题（朴素贝叶斯算法对测试集和预测集准确率）" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Scikit_learn$100___k_.coverage" NAME="100 - k-近邻算法 覆盖结果" MODIFIED="1650533443496" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/100 - 分类算法 - k-近邻算法" />
