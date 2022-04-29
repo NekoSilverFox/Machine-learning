@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7190a85b-e59c-461c-8efb-4f4ee5b77b1c" name="变更" comment="增加 lab1 中的第一题（朴素贝叶斯算法对测试集和预测集准确率）">
+    <list default="true" id="7190a85b-e59c-461c-8efb-4f4ee5b77b1c" name="变更" comment="增加 不同距离公式对KNN 算法的影响及 KNN 算法对玻璃品质的预测">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/100 - SPbSTU - lab1/100 - SPbSTU - lab1.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/100 - SPbSTU - lab1/100 - SPbSTU - lab1.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,7 +117,8 @@
       <option name="presentableId" value="Default" />
       <updated>1650794923673</updated>
       <workItem from="1650794926615" duration="2252000" />
-      <workItem from="1650832161884" duration="4886000" />
+      <workItem from="1650832161884" duration="6261000" />
+      <workItem from="1650921580431" duration="11000" />
     </task>
     <task id="LOCAL-00002" summary="增加 105">
       <created>1650833138528</created>
@@ -138,7 +141,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650881614591</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="增加 不同距离公式对KNN 算法的影响及 KNN 算法对玻璃品质的预测">
+      <created>1650889552173</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1650889552173</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -160,7 +170,8 @@
     <MESSAGE value="增加 105" />
     <MESSAGE value="增加 105 - 朴素贝叶斯算法" />
     <MESSAGE value="增加 lab1 中的第一题（朴素贝叶斯算法对测试集和预测集准确率）" />
-    <option name="LAST_COMMIT_MESSAGE" value="增加 lab1 中的第一题（朴素贝叶斯算法对测试集和预测集准确率）" />
+    <MESSAGE value="增加 不同距离公式对KNN 算法的影响及 KNN 算法对玻璃品质的预测" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加 不同距离公式对KNN 算法的影响及 KNN 算法对玻璃品质的预测" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Scikit_learn$100___k_.coverage" NAME="100 - k-近邻算法 覆盖结果" MODIFIED="1650533443496" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/100 - 分类算法 - k-近邻算法" />
