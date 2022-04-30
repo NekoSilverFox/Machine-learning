@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7190a85b-e59c-461c-8efb-4f4ee5b77b1c" name="变更" comment="增加 决策树对鸢尾花分类">
+    <list default="true" id="7190a85b-e59c-461c-8efb-4f4ee5b77b1c" name="变更" comment="增加 泰坦尼克号乘客生存预测">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
@@ -147,7 +147,7 @@
       <workItem from="1650832161884" duration="6261000" />
       <workItem from="1650921580431" duration="11000" />
       <workItem from="1651236505005" duration="1196000" />
-      <workItem from="1651237710546" duration="1922000" />
+      <workItem from="1651237710546" duration="2914000" />
     </task>
     <task id="LOCAL-00002" summary="增加 105">
       <created>1650833138528</created>
@@ -191,7 +191,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651237832116</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="增加 泰坦尼克号乘客生存预测">
+      <created>1651246211051</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1651246211051</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -216,7 +223,8 @@
     <MESSAGE value="增加 不同距离公式对KNN 算法的影响及 KNN 算法对玻璃品质的预测" />
     <MESSAGE value="增加 决策树笔记" />
     <MESSAGE value="增加 决策树对鸢尾花分类" />
-    <option name="LAST_COMMIT_MESSAGE" value="增加 决策树对鸢尾花分类" />
+    <MESSAGE value="增加 泰坦尼克号乘客生存预测" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加 泰坦尼克号乘客生存预测" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Scikit_learn$.coverage" NAME="决策树对鸢尾花分类 覆盖结果" MODIFIED="1651237639606" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/110 - 分类算法 - 决策树 - 鸢尾花分类" />
