@@ -1597,7 +1597,7 @@ k-近邻算法也是 KNN 算法（K Nearest Neighbor），这个算法是机器�
 
 交叉验证，网格搜索（模型选择与调优）API：
 
-`sklearn.model_selection.GridSearchCV(estimator, param_grid=None,cv=None)` **返回**转换器对象，可对估计器的指定参数值进行详尽搜索
+`sklearn.model_selection.GridSearchCV(estimator, param_grid=None,cv=None)` **返回**预估器对象，可对估计器的指定参数值进行详尽搜索
 
 - `estimator`：估计器对象
 - `param_grid`：估计器参数(==dict 字典类型==) **{'n_neighbors':[1,3,5]}**
@@ -1605,7 +1605,7 @@ k-近邻算法也是 KNN 算法（K Nearest Neighbor），这个算法是机器�
 
 
 
-因为**返回**的是转换器对象，所以再实例化之后可以调用：
+因为**返回**的是估计器对象，所以再实例化之后可以调用：
 
 - `fit()`：输入训练数据
 - `score()`：准确率
@@ -2088,7 +2088,7 @@ $$
 
 
 
-### 继承学习方法
+### 集成学习方法
 
 集成学习通过建立几个模型组合的来解决单一预测问题。它的**工件原理是生成多个分类器/模型，各自独立地学习和作出预测。**这些预测最后结合成组合预测（取众数），因此优于任何一个单分类的做出预测。
 
