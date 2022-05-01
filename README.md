@@ -2195,7 +2195,145 @@ $$
 
 
 
+# 回归与聚类算法
 
+如果目标值是连续性数据那么这种问题就是回归问题，解决这类问题的算法就是回归算法
+
+## 线性回归
+
+线性回归(Linear regression)是利用**回归方程(函数)**对**一个或多个自变量(特征值)和因变量(目标值)之间**关系进行建模的一种分析方式。
+
+- 特点：只有一个自变量的情况称为单变量回归，多于一个自变量情况的叫做多元回归
+
+
+
+**通用公式：**
+$$
+h(w)=w_{1} x_{1}+w_{2} x_{2}+w_{3} x_{3} \ldots+\mathrm{b}=w^{T} x+b
+$$
+其中 w, x 可以理解为矩阵：
+$$
+\mathrm{w}=\left(\begin{array}{c}
+b \\
+w_{1} \\
+w_{2}
+\end{array}\right), \mathrm{x}=\left(\begin{array}{c}
+1 \\
+x_{1} \\
+x_{2}
+\end{array}\right)
+$$
+
+
+**线性回归用矩阵表示举例：**
+
+- 公式：
+
+$$
+\left\{\begin{array}{l}
+1 \times x_{1}+x_{2}=2 \\
+0 \times x_{1}+x_{2}=2 \\
+2 \times x_{1}+x_{2}=3
+\end{array}\right.
+$$
+
+- 写成矩阵形式
+    $$
+    \begin{aligned}
+    &\left[\begin{array}{cc}
+    1 & 1 \\
+    0 & 1 \\
+    2 & 1
+    \end{array}\right]\left[\begin{array}{l}
+    x_{1} \\
+    x_{2}
+    \end{array}\right]=\left[\begin{array}{l}
+    2 \\
+    2 \\
+    3
+    \end{array}\right]\\
+    &\begin{aligned}
+    &\uparrow \\
+    &A \times x=y
+    \end{aligned}
+    \end{aligned}
+    $$
+
+- 从列的角度看
+    $$
+    \begin{aligned}
+    &{\left[\begin{array}{l}
+    1 \\
+    0 \\
+    2
+    \end{array}\right] \times x_{1}+\left[\begin{array}{l}
+    1 \\
+    1 \\
+    1
+    \end{array}\right] \times x_{2}=\left[\begin{array}{l}
+    2 \\
+    2 \\
+    3
+    \end{array}\right]} \\
+    &\uparrow \\
+    &a_{1} \times x_{1}+a_{2} \times x_{2}=y
+    \end{aligned}
+    $$
+
+那么怎么理解呢？我们来看几个例子
+
+- 期末成绩：0.7×考试成绩+0.3×平时成绩
+- 房子价格 = 0.02×中心区域的距离 + 0.04×城市一氧化氮浓度 + (-0.12×自住房平均房价) + 0.254×城镇犯罪率
+
+上面两个例子，**我们看到特征值与目标值之间建立了一个关系，这个关系可以理解为线性模型**。
+
+
+
+==注意：线性**模型**和线性**关系**并不是同一个东西！==，线性关系一定是线性模型，线性模型不一定是线性关系！
+
+
+
+**线性模型分为：**
+
+下面的`一次` 是一次方的意思
+
+- **自变量一次（线性关系）**
+    $$
+    y=b+w_1x_1 + w_2x_2 + w_3x_4 + ... + w_nx_n
+    $$
+    
+
+- **参数一次**
+    $$
+    y=b+w_1x^1+w_2x^2+w_3x^3 + ... + w_nx^n
+    $$
+    
+
+### 线性回归的特征与目标的关系分析
+
+线性回归当中主要有两种模型，**一种是线性关系，另一种是非线性关系。**在这里我们只能画一个平面更好去理解，所以都用单个特征或两个特征举例子。
+
+- **线性关系**
+
+    - 单变量线性关系：
+
+        <img src="doc/pic/README/线性关系图.png" alt="çº¿æ€§å…³ç³&quot;å›¾" style="zoom:30%;" />
+
+    - 多变量线性关系
+
+        <img src="doc/pic/README/多变量线性关系.png" alt="å¤šå˜é‡çº¿æ€§å…³ç³&quot;" style="zoom: 33%;" />
+
+        注释：单特征与目标值的关系呈直线关系，或者两个特征与目标值呈现平面的关系
+
+        更高维度的我们不用自己去想，记住这种关系即可
+
+        
+
+    - 非线性关系
+
+        <img src="doc/pic/README/非线性关系.png" alt="éžçº¿æ€§å…³ç³&quot;" style="zoom: 67%;" />
+
+        
 
 
 
