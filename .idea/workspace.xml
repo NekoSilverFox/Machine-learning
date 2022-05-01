@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7190a85b-e59c-461c-8efb-4f4ee5b77b1c" name="变更" comment="增加 随机森林对泰坦尼克乘客生存预测">
+    <list default="true" id="7190a85b-e59c-461c-8efb-4f4ee5b77b1c" name="变更" comment="增加 KNN 算法、朴素贝叶斯算法、决策树、随机森林的思维导图">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/100 - SPbSTU - lab1/100 - SPbSTU - lab1.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/100 - SPbSTU - lab1/100 - SPbSTU - lab1.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/111 - 分类算法 - 决策树 - 泰坦尼克号乘客生存预测/泰坦尼克号乘客生存预测.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/111 - 分类算法 - 决策树 - 泰坦尼克号乘客生存预测/泰坦尼克号乘客生存预测.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/112 - 分类算法 - 随机森林 - 泰坦尼克号乘客生存概率/随机森林对泰坦尼克乘客生存预测.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/112 - 分类算法 - 随机森林 - 泰坦尼克号乘客生存概率/随机森林对泰坦尼克乘客生存预测.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/机器学习.xmind" beforeDir="false" afterPath="$PROJECT_DIR$/机器学习.xmind" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -150,7 +152,7 @@
       <workItem from="1651236505005" duration="1196000" />
       <workItem from="1651237710546" duration="2914000" />
       <workItem from="1651347097943" duration="1658000" />
-      <workItem from="1651402616524" duration="861000" />
+      <workItem from="1651402616524" duration="2534000" />
     </task>
     <task id="LOCAL-00002" summary="增加 105">
       <created>1650833138528</created>
@@ -215,7 +217,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651349776920</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="增加 KNN 算法、朴素贝叶斯算法、决策树、随机森林的思维导图">
+      <created>1651403514063</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1651403514063</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -243,7 +252,8 @@
     <MESSAGE value="增加 泰坦尼克号乘客生存预测" />
     <MESSAGE value="增加 随机森林笔记" />
     <MESSAGE value="增加 随机森林对泰坦尼克乘客生存预测" />
-    <option name="LAST_COMMIT_MESSAGE" value="增加 随机森林对泰坦尼克乘客生存预测" />
+    <MESSAGE value="增加 KNN 算法、朴素贝叶斯算法、决策树、随机森林的思维导图" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加 KNN 算法、朴素贝叶斯算法、决策树、随机森林的思维导图" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Scikit_learn$.coverage" NAME="决策树对鸢尾花分类 覆盖结果" MODIFIED="1651237639606" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/110 - 分类算法 - 决策树 - 鸢尾花分类" />
