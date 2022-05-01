@@ -2211,7 +2211,11 @@ $$
 $$
 h(w)=w_{1} x_{1}+w_{2} x_{2}+w_{3} x_{3} \ldots+\mathrm{b}=w^{T} x+b
 $$
-其中 ==$w$ 是权重==，==$b$ 是偏置==； w, x 可以理解为矩阵：=
+其中 ==$w$ 是权重==，==$b$ 是偏置==因为有了偏置线才能沿着坐标轴移动，不然就只能过原点； 
+
+
+
+w, x 可以理解为矩阵：=
 $$
 \mathrm{w}=\left(\begin{array}{c}
 b \\
@@ -2360,6 +2364,8 @@ $$
 
 
 
+---
+
 #### 损失函数
 
 损失函数又叫：cost、成本函数、目标函数
@@ -2378,6 +2384,8 @@ $$
 
 
 
+---
+
 ### 线性回归的优化方法
 
 **如何去求模型当中的 W（x 的权重），使得损失最小？（目的是找到最小损失对应的W值）**
@@ -2387,7 +2395,10 @@ $$
     - 正规方程
     - 梯度下降法
 
-    
+
+
+
+---
 
 #### 正规方程
 
@@ -2418,6 +2429,19 @@ $$
 运用正规方程方法求解参数：
 
 <img src="doc/pic/README/正规方程求解方式.png" alt="image-20190709103604510" style="zoom: 33%;" />
+
+
+
+**API：**
+
+`sklearn.linear_model.LinearRegression(fit_intercept=True)`
+
+- 通过正规方程优化
+- 参数
+    - `fit_intercept`：是否计算偏置
+- 属性
+    - `LinearRegression.coef_`：回归系数
+    - `LinearRegression.intercept_`：偏置
 
 
 
@@ -2568,6 +2592,41 @@ $$
     优化动态图演示
 
     ![çº¿æ€§å›žå½’ä¼˜åŒ–åŠ¨æ€å›¾](doc/pic/README/线性回归优化动态图-0716617.gif)
+
+
+
+**API：**
+
+`sklearn.linear_model.SGDRegressor(loss='squared_loss', fit_intercept=True, learning_rate ='optimal', eta0=0.01)` SGDRegressor类实现了随机梯度下降学习，它支持不同的**loss函数和正则化惩罚项**来拟合线性回归模型。
+
+- 参数：
+
+    - `loss`:损失类型
+
+        - `loss="squared_loss"`: 普通最小二乘法
+
+    - `fit_intercept`：是否计算偏置
+
+    - `learning_rate` : 学习率填充
+
+        - `'constant'`: $eta = eta_0$ 学习率始终和初始值一样，不变化
+
+        - `'optimal'`: $eta = 1.0 / (alpha * (t + t_0))$ [默认值]
+
+        - `'invscaling'`: $eta = eta_0 / pow(t, power_t)$
+
+            **power_t=0.25:存在父类当中**
+
+        **对于一个常数值的学习率来说，可以使用 learning_rate='constant' ，并使用eta0来指定学习率。**
+
+        
+
+- 属性：
+
+    - `SGDRegressor.coef_`：回归系数
+    - `SGDRegressor.intercept_`：偏置
+
+
 
 
 
