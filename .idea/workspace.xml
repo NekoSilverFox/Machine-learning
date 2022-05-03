@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7190a85b-e59c-461c-8efb-4f4ee5b77b1c" name="变更" comment="增加 线性回归的特征与目标的关系分析">
+    <list default="true" id="7190a85b-e59c-461c-8efb-4f4ee5b77b1c" name="变更" comment="增加 梯度下降法和正规方程的API">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -148,7 +148,7 @@
       <workItem from="1651236505005" duration="1196000" />
       <workItem from="1651237710546" duration="2914000" />
       <workItem from="1651347097943" duration="1658000" />
-      <workItem from="1651402616524" duration="4984000" />
+      <workItem from="1651402616524" duration="6254000" />
     </task>
     <task id="LOCAL-00002" summary="增加 105">
       <created>1650833138528</created>
@@ -241,7 +241,28 @@
       <option name="project" value="LOCAL" />
       <updated>1651419634445</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="增加 梯度下降法笔记">
+      <created>1651423551960</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1651423551960</updated>
+    </task>
+    <task id="LOCAL-00016" summary="增加 梯度下降法笔记">
+      <created>1651423561134</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1651423561134</updated>
+    </task>
+    <task id="LOCAL-00017" summary="增加 梯度下降法和正规方程的API">
+      <created>1651424713793</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1651424713793</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -273,7 +294,9 @@
     <MESSAGE value="增加 spbstu - lab1决策树的实验" />
     <MESSAGE value="增加 线性回归笔记" />
     <MESSAGE value="增加 线性回归的特征与目标的关系分析" />
-    <option name="LAST_COMMIT_MESSAGE" value="增加 线性回归的特征与目标的关系分析" />
+    <MESSAGE value="增加 梯度下降法笔记" />
+    <MESSAGE value="增加 梯度下降法和正规方程的API" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加 梯度下降法和正规方程的API" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Scikit_learn$.coverage" NAME="决策树对鸢尾花分类 覆盖结果" MODIFIED="1651237639606" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/110 - 分类算法 - 决策树 - 鸢尾花分类" />
