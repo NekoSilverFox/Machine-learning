@@ -10,6 +10,7 @@ from sklearn import datasets
 from sklearn import model_selection
 from sklearn import preprocessing
 from sklearn import linear_model
+from sklearn import metrics
 
 
 def linear_LinearRegression():
@@ -37,6 +38,9 @@ def linear_LinearRegression():
     print('正规方程偏置：', estimator.intercept_)
 
     # 6. 模型评估
+    predict = estimator.predict(X=x_test)
+    error_mse = metrics.mean_squared_error(y_true=y_test, y_pred=predict)  # 均方误差(Mean Squared Error - MSE)评价机制：
+    print('梯度下降的均方误差为：', error_mse)
 
 
 def linear_SGDRegressor():
@@ -56,7 +60,7 @@ def linear_SGDRegressor():
     x_test = transfer.transform(x_test)
 
     # 4. 获取正规方程预估器
-    estimator = linear_model.SGDRegressor()
+    estimator = linear_model.SGDRegressor(learning_rate='constant', eta0=0.001, max_iter=10000)
 
     # 5. 模型训练
     estimator.fit(X=x_train, y=y_train)
@@ -64,6 +68,9 @@ def linear_SGDRegressor():
     print('梯度下降偏置：', estimator.intercept_)
 
     # 6. 模型评估
+    predict = estimator.predict(X=x_test)
+    error_mse = metrics.mean_squared_error(y_true=y_test, y_pred=predict)  # 均方误差(Mean Squared Error - MSE)评价机制：
+    print('梯度下降的均方误差为：', error_mse)
 
 
 if __name__ == '__main__':
