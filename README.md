@@ -2440,6 +2440,8 @@ $$
 - 通过正规方程优化
 - 参数
     - `fit_intercept`：是否计算偏置
+    - `loss`:损失类型
+        - `loss='squared_loss'`: 普通最小二乘法
 - 属性
     - `LinearRegression.coef_`：回归系数
     - `LinearRegression.intercept_`：偏置
@@ -2693,7 +2695,11 @@ $$
 
         **对于一个常数值的学习率来说，可以使用 learning_rate='constant' ，并使用eta0来指定学习率。**
 
-        
+    - `penalty='l2'`: 正则化，默认为 `'l2'`，即 Ridge L2 岭回归；也可以指定为 `'l1'`，即 LASSO L1 正则化
+
+    
+
+    
 
 - **属性：**
 
@@ -2823,7 +2829,7 @@ $$
 
     L2 的正则化比较常用，因为他是通过**惩罚项**进行调整
 
-    **L2 正则化为：==$损失函数 + \lambda惩罚项$==**：
+    **L2 正则化为：==$损失函数 + \lambda惩罚项$==**，$\lambda$可以理解为惩罚力度：
     $$
     J(w)=\frac{1}{2 m} \sum_{i=1}^{m}\left(h_{w}\left(x_{i}\right)-y_{i}\right)^{2}+\lambda \sum_{j=1}^{n} w_{j}^{2}
     \\ m 为样本数
@@ -2846,19 +2852,68 @@ $$
 
 
 
+> 线性回归损失函数，是最小二乘法，等价于当预测值与真实值的误差满足正态分布时的极大似然估计；
+>
+> 岭回归的损失函数，是最小二乘法+**L2范数**，等价于当预测值与真实值的误差满足正态分布，且权重值也满足**正态分布**（先验分布）时的最大后验估计；
+>
+> LASSO的损失函数，是最小二乘法+**L1范数**，等价于当预测值与真实值的误差满足正态分布，且权重值也满足**拉普拉斯分布**（先验分布）时的最大后验估计
 
 
 
+### 岭回归
+
+岭回归其实就是一个**带 L2 正则化的线性回归**，**从而达到解决过拟合的效果**，是线性回归的一种改进
+
+Ridge Regression (岭回归，又名 Tikhonov regularization)，岭回归是线性回归的正则化版本，即在原来的线性回归的 cost function 中添加正则项（regularization term）:
+$$
+\begin{gathered}
+J(\theta)=\operatorname{MSE}(\theta)+\alpha \sum_{i=1}^{n} \theta_{i}^{2}
+\\即\\
+J(\theta)=\frac{1}{m} \sum_{i=1}^{m}\left(\theta^{T} \cdot x^{(i)}-y^{(i)}\right)^{2}+\alpha \sum_{i=1}^{n} \theta_{i}^{2}
+\end{gathered}
+$$
+
+- $α=0$：岭回归退化为线性回归
 
 
 
+**API:**
+
+`sklearn.linear_model.Ridge(alpha=1.0, fit_intercept=True, solver="auto", normalize=False)` 具有l2正则化的线性回归
+
+- `alpha`:正则化力度（惩罚项），也叫 λ
+    - **λ 取值：0~1 1~10**
+- `solver`:会根据数据自动选择优化方法
+    - **sag:如果数据集、特征都比较大，选择该随机梯度下降优化**
+- `normalize`:数据是否进行标准化
+    - `normalize=False`:可以在fit之前调用 preprocessing.StandardScaler 标准化数据
 
 
 
+**参数：**
+
+- Ridge.coef_:回归权重
+- Ridge.intercept_:回归偏置
 
 
 
+**Ridge方法相当于 `SGDRegressor(penalty='l2', loss="squared_loss")`，只不过 SGDRegressor 实现了一个普通的随机梯度下降学习，推荐使用Ridge(实现了SAG)**
 
+---
+
+`sklearn.linear_model.RidgeCV(_BaseRidgeCV, RegressorMixin)`
+
+- 具有l2正则化的线性回归，可以进行交叉验证
+- coef_:回归系数
+
+---
+
+**正则化程度的变化，对结果的影响**
+
+<img src="doc/pic/README/正则化力度.png" alt="æ­£åˆ™åŒ–åŠ›åº¦" style="zoom:50%;" />
+
+- 正则化力度越大，权重系数会越小
+- 正则化力度越小，权重系数会越大
 
 
 

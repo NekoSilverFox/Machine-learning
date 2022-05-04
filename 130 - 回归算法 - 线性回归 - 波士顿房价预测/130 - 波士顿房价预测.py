@@ -73,12 +73,44 @@ def linear_SGDRegressor():
     print('梯度下降的均方误差为：', error_mse)
 
 
+
+def linear_Ridger():
+    """
+    使用 岭回归（Ridger）进行对波士顿放假的预测
+    :return:
+    """
+    # 1. 获取数据集
+    data = datasets.load_boston()
+
+    # 2. 划分数据集
+    x_train, x_test, y_train, y_test = model_selection.train_test_split(data.data, data.target, random_state=233)
+
+    # 3. 标准化
+    transfer = preprocessing.StandardScaler()
+    x_train = transfer.fit_transform(X=x_train)
+    x_test = transfer.transform(X=x_test)
+
+    # 4. 获取岭回归预估器
+    estimator = linear_model.Ridge(alpha=0.5, random_state=233, max_iter=10000)
+    estimator.fit(X=x_train, y=y_train)
+    print('Ridge 岭回归权重：', estimator.coef_)
+    print('Ridge 岭回归偏置：', estimator.intercept_)
+
+    # 5. 模型评估
+    predict = estimator.predict(X=x_test)
+    error_mse = metrics.mean_squared_error(y_true=y_test, y_pred=predict)
+    print('Ridge 岭回归的均方误差为：', error_mse)
+
+
 if __name__ == '__main__':
     print('>>' * 50)
     linear_LinearRegression()
 
     print('>>' * 50)
     linear_SGDRegressor()
+
+    print('>>' * 50)
+    linear_Ridger()
 
 
 
