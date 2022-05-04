@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7190a85b-e59c-461c-8efb-4f4ee5b77b1c" name="变更" comment="增加 笔记：过拟合与欠拟合、正则化">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/130 - 回归算法 - 线性回归 - 波士顿房价预测/130 - 波士顿房价预测.py" beforeDir="false" afterPath="$PROJECT_DIR$/130 - 回归算法 - 线性回归 - 波士顿房价预测/130 - 波士顿房价预测.py" afterDir="false" />
+    <list default="true" id="7190a85b-e59c-461c-8efb-4f4ee5b77b1c" name="变更" comment="增加 图像">
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -175,7 +173,7 @@
       <workItem from="1651347097943" duration="1658000" />
       <workItem from="1651402616524" duration="6254000" />
       <workItem from="1651593680251" duration="620000" />
-      <workItem from="1651658209160" duration="4749000" />
+      <workItem from="1651658209160" duration="5418000" />
     </task>
     <task id="LOCAL-00002" summary="增加 105">
       <created>1650833138528</created>
@@ -324,7 +322,21 @@
       <option name="project" value="LOCAL" />
       <updated>1651665882873</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="增加 Ridge 岭回归">
+      <created>1651681433311</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1651681433311</updated>
+    </task>
+    <task id="LOCAL-00024" summary="增加 图像">
+      <created>1651681454195</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1651681454195</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -363,12 +375,14 @@
     <MESSAGE value="增加 回归性能评估-均方误差 MSE" />
     <MESSAGE value="增加 笔记-梯度下降的几种优化：&#10;&#10;常见的梯度下降算法有：&#10;&#10;- 全梯度下降算法(Full gradient descent）,&#10;- 随机梯度下降算法（Stochastic gradient descent）,&#10;- 小批量梯度下降算法（Mini-batch gradient descent）,&#10;- 随机平均梯度下降算法（Stochastic average gradient descent）" />
     <MESSAGE value="增加 笔记：过拟合与欠拟合、正则化" />
-    <option name="LAST_COMMIT_MESSAGE" value="增加 笔记：过拟合与欠拟合、正则化" />
+    <MESSAGE value="增加 Ridge 岭回归" />
+    <MESSAGE value="增加 图像" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加 图像" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Scikit_learn$.coverage" NAME="决策树对鸢尾花分类 覆盖结果" MODIFIED="1651237639606" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/110 - 分类算法 - 决策树 - 鸢尾花分类" />
     <SUITE FILE_PATH="coverage/Scikit_learn$100___k_.coverage" NAME="100 - k-近邻算法 覆盖结果" MODIFIED="1650533443496" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/100 - 分类算法 - k-近邻算法" />
-    <SUITE FILE_PATH="coverage/Scikit_learn$130___.coverage" NAME="130 - 波士顿房价预测 覆盖结果" MODIFIED="1651681383089" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/130 - 回归算法 - 线性回归 - 波士顿房价预测" />
+    <SUITE FILE_PATH="coverage/Scikit_learn$130___.coverage" NAME="130 - 波士顿房价预测 覆盖结果" MODIFIED="1651681392006" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/130 - 回归算法 - 线性回归 - 波士顿房价预测" />
     <SUITE FILE_PATH="coverage/Scikit_learn$105___20.coverage" NAME="105 - 20类文章分类 覆盖结果" MODIFIED="1650833095153" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/105 - 分类算法 - 朴素贝叶斯算法 - 20 类文章分类" />
     <SUITE FILE_PATH="coverage/Scikit_learn$010___.coverage" NAME="010 - 特征提取 覆盖结果" MODIFIED="1651237560544" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/010 - 特征工程 - 特征抽取" />
   </component>
