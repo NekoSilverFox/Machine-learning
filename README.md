@@ -2599,7 +2599,7 @@ $$
 
 `sklearn.linear_model.SGDRegressor(loss='squared_loss', fit_intercept=True, learning_rate ='optimal', eta0=0.01)` SGDRegressor类实现了随机梯度下降学习，它支持不同的**loss函数和正则化惩罚项**来拟合线性回归模型。
 
-- 参数：
+- **参数：**
 
     - `loss`:损失类型
 
@@ -2621,7 +2621,7 @@ $$
 
         
 
-- 属性：
+- **属性：**
 
     - `SGDRegressor.coef_`：回归系数
     - `SGDRegressor.intercept_`：偏置
@@ -2654,6 +2654,16 @@ $$
     - 梯度下降法：**SGDRegressor**
 
 
+
+
+
+#### 案例：波士顿房价预测
+
+**数据介绍：**
+
+<img src="doc/pic/README/房价数据集介绍.png" alt="房价数据集介绍" style="zoom:50%;" />
+
+<img src="doc/pic/README/属性.png" alt="属性" style="zoom:50%;" />
 
 
 
