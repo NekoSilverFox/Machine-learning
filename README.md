@@ -3110,8 +3110,72 @@ $$
 
 
 
+# 分类评估方法
+
+## 混淆矩阵
+
+在分类任务下，预测结果(Predicted Condition)与正确标记(True Condition)之间存在四种不同的组合，构成混淆矩阵(适用于多分类)
+
+<img src="doc/pic/README/混淆矩阵.png" alt="image-20190321103913068" style="zoom:33%;" />
+
+- **TP** - True Possitive
+- **FN** - False Negative
 
 
+
+
+
+## 精确率与召回率
+
+- **精确率**： (Precision)
+
+    预测结果为**正例样本中真实为正例的比例**
+
+    <img src="doc/pic/README/confusion_matrix1.png" alt="image-20190321103930761" style="zoom:50%;" />
+
+- **召回率**：(Recall)
+
+    **真实为正例的样本中预测结果为正例的比例**（查得全，对正样本的区分能力）
+
+    <img src="doc/pic/README/confusion_matrix2.png" alt="image-20190321103947092" style="zoom:50%;" />
+
+
+
+**API：**
+
+`sklearn.metrics.classification_report(y_true, y_pred, labels=[], target_names=None)` **返回**每个类别精确率与召回率
+
+- - `y_true`：真实目标值
+    - `y_pred`：估计器预测目标值
+    - `labels`: 指定类别对应的数字，比如下面的例子中，2 代表良性，4 代表恶性
+    - `target_names`：目标类别名称
+
+```python
+ret = classification_report(y_test, y_predict, labels=(2,4), target_names=("良性", "恶性"))
+print(ret)
+
+>>>
+              precision    recall  f1-score   support
+
+          良性       0.97      0.95      0.96       105
+          恶性       0.93      0.95      0.94        66
+
+    accuracy                           0.95       171
+   macro avg       0.95      0.95      0.95       171
+weighted avg       0.95      0.95      0.95       171
+
+```
+
+**假设这样一个情况，如果99个样本癌症，1个样本非癌症，不管怎样我全都预测正例(默认癌症为正例),准确率就为99%但是这样效果并不好，这就是==样本不均衡下的评估问题==**
+
+问题：**如何衡量样本不均衡下的评估**？
+
+## F1-score
+
+还有其他的评估标准，F1-score，反映了模型的稳健型
+$$
+F 1=\frac{2 T P}{2 T P+F N+F P}=\frac{2 \cdot \text { Precision } \cdot \text { Recall }}{\text { Precision }+\text { Recall }}
+$$
 
 
 
