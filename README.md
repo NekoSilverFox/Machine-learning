@@ -3197,9 +3197,7 @@ $$
 
 **ROC 曲线 和 AUC 指标都是用于解决评估样本不均衡的时候，分类器的指标。（比如 100 个样本中，正样本有 99 个，而负样本只有 1 个）**
 
-
-
-ROC曲线的横轴就是FPRate，纵轴就是TPRate，当二者相等时，表示的意义则是：对于不论真实类别是1还是0的样本，分类器预测为1的概率是相等的，此时AUC为0.5（AUC 为 0.5 也就是预测最差的时候，因为和瞎蒙的准确率是一样的）
+ROC曲线的横轴就是 FPRate【==假（False）阳（Positive）性（Rate）==】，纵轴就是TPRate【==真（True）阳（Positive）性（Rate）==】，当二者相等时，表示的意义则是：对于不论真实类别是1还是0的样本，分类器预测为1的概率是相等的，此时AUC为0.5（AUC 为 0.5 也就是预测最差的时候，因为和瞎蒙的准确率是一样的）
 
 <img src="doc/pic/README/ROC.png" alt="ROC" style="zoom:50%;" />
 
@@ -3307,6 +3305,32 @@ ROC曲线的横轴就是FPRate，纵轴就是TPRate，当二者相等时，表�
 
 
 
+**举例：曲线绘制**
+
+```python
+# 绘制 ROC 曲线
+from matplotlib import pyplot as plt
+
+#计算roc和auc
+fpr, tpr, threshold  = metrics.roc_curve(y_true=y_test_new, y_score=predict)  # 计算真正率和假正率
+roc_auc = metrics.auc(fpr,tpr)  # 也可以这么计算auc的值
+print(roc_auc)
+
+plt.figure()
+lw = 2
+plt.figure(figsize=(10,10))
+plt.plot(fpr, tpr, color='r',
+         lw=lw, label='ROC curve (area = %0.3f)' % roc_auc)  # 假正率为横坐标，真正率为纵坐标做曲线
+plt.plot([0, 1], [0, 1], color='navy', lw=lw, linestyle='--')
+plt.xlim([0.0, 1.0])
+plt.ylim([0.0, 1.0])
+plt.xlabel('False Positive Rate')
+plt.ylabel('True Positive Rate')
+plt.title('癌症预测模型')
+plt.legend(loc="lower right")
+plt.show()
+```
+
 
 
 
@@ -3351,7 +3375,23 @@ print("AUC指标：", roc_auc_score(y_test, y_predict))
 
 
 
+# 模型的保存与加载
 
+
+
+包： `from sklearn.externals import joblib`，如果不起作用则使用：`import joblib`
+
+
+
+**模型的保存：**
+
+`joblib.dump(estimator, '路径.pkl')`
+
+
+
+**模型的加载：**
+
+`estimator = joblib.load('路径.plk')`
 
 
 

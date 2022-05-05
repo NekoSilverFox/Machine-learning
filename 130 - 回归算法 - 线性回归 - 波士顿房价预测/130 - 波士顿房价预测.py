@@ -11,6 +11,7 @@ from sklearn import model_selection
 from sklearn import preprocessing
 from sklearn import linear_model
 from sklearn import metrics
+import joblib
 
 
 def linear_LinearRegression():
@@ -90,10 +91,17 @@ def linear_Ridger():
     x_test = transfer.transform(X=x_test)
 
     # 4. 获取岭回归预估器
-    estimator = linear_model.Ridge(alpha=0.5, random_state=233, max_iter=10000)
-    estimator.fit(X=x_train, y=y_train)
-    print('Ridge 岭回归权重：', estimator.coef_)
-    print('Ridge 岭回归偏置：', estimator.intercept_)
+    # estimator = linear_model.Ridge(alpha=0.5, random_state=233, max_iter=10000)
+    # estimator.fit(X=x_train, y=y_train)
+    # print('Ridge 岭回归权重：', estimator.coef_)
+    # print('Ridge 岭回归偏置：', estimator.intercept_)
+
+    # 保存模型
+    # joblib.dump(estimator, 'estimator_ridge.pkl')
+
+    # 模型加载
+    estimator = joblib.load('estimator_ridge.pkl')
+
 
     # 5. 模型评估
     predict = estimator.predict(X=x_test)
