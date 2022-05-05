@@ -2429,15 +2429,17 @@ k聚类动态效果图：
 
 **API：**
 
-`sklearn.cluster.KMeans(n_clusters=8, init='k-means++')` k-means 聚类
+`sklearn.cluster.KMeans(n_clusters=8, init='k-means++')` k-means 聚类，注意函数名是 ==KMeans==，不是==k_means==！
 
 - 参数:
     - `n_clusters`：开始的聚类中心数量（簇的数量），整型，缺省值=8，生成的聚类数，即产生的质心（centroids）数。
     - `init`：初始化方法，默认方法为“k-means++”
 - 方法:
-    - estimator.fit(x)
+    - estimator.fit(x)，**注意，因为我们 k-means 是无监督学习，没有目标值，所以只传目标值**
     - estimator.predict(x)
     - estimator.fit_predict(x) 计算聚类中心并预测每个样本属于哪个类别,相当于先调用fit(x),然后再调用predict(x)
+- 属性：
+    - `labels_`：默认标记的类型，可以和真实值比较（不是值比较）
 
 
 
