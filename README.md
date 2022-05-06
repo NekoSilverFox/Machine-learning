@@ -623,7 +623,7 @@ A：因为我们在模型建立结束之后需要**对模型进行评估**，评
 
 **数据集划分 API：**
 
-`x_train, x_test, y_train, y_test = sklearn.model_selection.train_test_split(x=特征值, y=目标值, test_size=0.25, random_state=随机种子)`
+`x_train, x_test, y_train, y_test = sklearn.model_selection.train_test_split(X=特征值, y=目标值, test_size=0.25, random_state=随机种子)`
 
 - `X` 数据集的特征值
 
@@ -1042,7 +1042,7 @@ sklearn.preprocessing
 $$X ^ { \prime } = \frac { x - m e an } { \sigma }  $$
 
 - mean 平均值
-- $\sigma$ 标准差
+- $\sigma$ 标准差=ance
 
 
 
@@ -1243,15 +1243,15 @@ sklearn.feature_selection
 
 **获取转换器对象：**
 
-`tranfer = sklearn.feature_selection.VarianceThreshold(threahold=0.0)`
+`tranfer = sklearn.feature_selection.VarianceThreshold(threshold=0.0)`
 
-- `threahold` 是临界值，低于或等于临界值的数据将会被删除
+- `threshold` 是临界值，低于或等于临界值的数据将会被删除
 
     
 
     **实例化后可调用：**
 
-    - `VarianceThreshold.fit_transform(X=numpy.ndarry)` **返回**新特征值数组：训练集差异低于 `threahold` 的特征将会被删除。默认值是保留所有非零方差特征，即删除所有样本中具有相同值的特征
+    - `VarianceThreshold.fit_transform(X=numpy.ndarry)` **返回**新特征值数组：训练集差异低于 `threshold` 的特征将会被删除。默认值是保留所有非零方差特征，即删除所有样本中具有相同值的特征
         - `X` numpy.ndarry 格式的二维数据
 
 
@@ -1298,7 +1298,7 @@ $$
 
 **获取转换器：**
 
-`transfer = sklearn.decomposition.PCA(n_components=None)` 将数据分解为较低维数的空间
+`transfer = sklearn.decomposition.PCA(b)` 将数据分解为较低维数的空间
 
 **【注意】：这里的 `n_components` 传递整数和小数的效果是不一样的！** 
 
@@ -1870,6 +1870,16 @@ $$
 
 
 
+**API：**
+
+在scikit-learn中，一共有3个朴素贝叶斯的分类算法类。分别是`GaussianNB`，`MultinomialNB` 和 `BernoulliNB`。其中
+
+- `GaussianNB` 就是先验为`高斯分布`的朴素贝叶斯，适用于**样本特征的分布大部分是连续值**
+- `MultinomialNB` 就是先验为`多项式分布`的朴素贝叶斯，适用于**样本特征的分大部分是多元离散值**
+- i，适用于**样本特征是二元离散值或者很稀疏的多元离散值**
+
+
+
 ## 决策树
 
 **什么是决策树？**
@@ -2086,8 +2096,6 @@ $$
 
 
 
-
-
 ### 集成学习方法
 
 集成学习通过建立几个模型组合的来解决单一预测问题。它的**工件原理是生成多个分类器/模型，各自独立地学习和作出预测。**这些预测最后结合成组合预测（取众数），因此优于任何一个单分类的做出预测。
@@ -2230,14 +2238,14 @@ h(w)=w_{1} x_{1}+w_{2} x_{2}+w_{3} x_{3} \ldots+\mathrm{b}
 $$
 **激活函数：**
 
-- sigmoid函数
+- **sigmoid 函数**
     将线性回归的输出 $h(w)$ 作为输入，就会被映射到 [0, 1] 区间
     $$
     g\left(w^{T}, x\right)=\frac{1}{1+e^{-h(w)}}\\
     &=\frac{1}{1+e^{-w^{T}} x} 矩阵表示法
     $$
 
-- 判断标准
+- **判断标准**
 
     - 回归的结果输入到sigmoid函数当中
     - 输出结果：[0, 1]区间中的一个概率值，默认为0.5为阈值
@@ -2248,10 +2256,8 @@ $$
 
     所以我们要构建一个损失函数（最小二乘法、均方误差），然后使用一些优化算法使得损失最小。但这里我们没法再使用最小二乘法、均方误差，要构建另外的方法
 
-    > 
-    >
     > 逻辑回归最终的分类是通过属于某个类别的概率值来判断是否属于某个类别，并且这个类别默认标记为1(正例),另外的一个类别会标记为0(反例)。（方便损失计算）
-
+    
     输出结果解释(重要)：假设有两个类别A，B，并且假设我们的概率值为属于A(1)这个类别的概率值。现在有一个样本的输入到逻辑回归输出结果0.55，那么这个概率值超过0.5，意味着我们训练或者预测的结果就是A(1)类别。那么反之，如果得出结果为0.3那么，训练或者预测结果就为B(0)类别。
 
     关于**逻辑回归的阈值是可以进行改变的**，比如上面举例中，如果你把阈值设置为0.6，那么输出的结果0.55，就属于B类。
@@ -2276,22 +2282,22 @@ $$
         $$
         \operatorname{cost}\left(h_{\theta}(x), y\right)= \begin{cases}-\log \left(h_{\theta}(x)\right) & \text { if } \mathrm{y}=1 \\ -\log \left(1-h_{\theta}(x)\right) & \text { if } \mathrm{y}=0\end{cases}
         $$
-
+    
         > 其中 y 为真实值，
         >
         > **$h_{\theta}(x)$ 为预测值，也就是线性回归得到的权重和偏置值 -经过-> sigmoid函数映射得到的值**
-
+    
         <img src="doc/pic/README/log图像.png" alt="image-20190221142055367" style="zoom:50%;" />
         当 y 等于 0 时：
         <img src="doc/pic/README/image-20220504222334074.png" alt="image-20220504222334074" style="zoom:50%;" />
-
+    
         无论何时，我们都希望**损失函数值，越小越好**
 
         分情况讨论，对应的损失函数值：
 
         - **当y=1时，我们希望 $h_{\theta}(x)$ 值越大越好；**
         - **当y=0时，我们希望 $h_{\theta}(x)$ 值越小越好**
-
+    
         
 
         **综合完整损失函数**
@@ -2317,7 +2323,7 @@ $$
 
 `sklearn.linear_model.LogisticRegression(solver='liblinear', penalty='l2', C=1.0)`
 
-- `solver`可选参数: {'liblinear', 'sag', 'saga','newton-cg', 'lbfgs'}，
+- `solver`可选参数: `{'liblinear', 'sag', 'saga','newton-cg', 'lbfgs'}`，
     - 默认: `'liblinear'`；用于优化问题的算法。
     - **对于小数据集来说，“liblinear”是个不错的选择，而“sag”和'saga'对于大型数据集会更快。**
     - 对于**多类问题**，只有'newton-cg'， 'sag'， 'saga'和'lbfgs'可以**处理多项损失**; **“liblinear”仅限于“one-versus-rest”分类。**
