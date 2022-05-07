@@ -4,9 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7190a85b-e59c-461c-8efb-4f4ee5b77b1c" name="变更" comment="增加 精确率和召回率：115 - 癌症分类预测-良／恶性乳腺癌肿瘤预测">
+    <list default="true" id="7190a85b-e59c-461c-8efb-4f4ee5b77b1c" name="变更" comment="增加 Sklearn 常用 API 的思维导图">
+      <change afterPath="$PROJECT_DIR$/129 - SPbSTU - lab1/2022_варианты.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/pic/README/image-20220507151044291.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/pic/README/image-20220507151107607.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/pic/README/image-20220507151129153.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/pic/README/image-20220507151218997.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/pic/README/image-20220507151325051.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/pic/README/image-20220507151411111.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/115 - 分类算法 - 逻辑回归 - 癌症良恶预测/115 - 癌症预测.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/115 - 分类算法 - 逻辑回归 - 癌症良恶预测/115 - 癌症预测.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/129 - SPbSTU - lab1/100 - SPbSTU - lab1.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/129 - SPbSTU - lab1/100 - SPbSTU - lab1.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -40,6 +47,7 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
@@ -175,7 +183,8 @@
       <workItem from="1651347097943" duration="1658000" />
       <workItem from="1651402616524" duration="6254000" />
       <workItem from="1651593680251" duration="620000" />
-      <workItem from="1651658209160" duration="8175000" />
+      <workItem from="1651658209160" duration="14029000" />
+      <workItem from="1651837619147" duration="5738000" />
     </task>
     <task id="LOCAL-00002" summary="增加 105">
       <created>1650833138528</created>
@@ -359,7 +368,56 @@
       <option name="project" value="LOCAL" />
       <updated>1651743420758</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="增加 ROC 曲线的绘制">
+      <created>1651750443792</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1651750443792</updated>
+    </task>
+    <task id="LOCAL-00029" summary="增加 PR 曲线的绘制">
+      <created>1651760797830</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1651760797830</updated>
+    </task>
+    <task id="LOCAL-00030" summary="增加 模型的保存和加载">
+      <created>1651762869511</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1651762869511</updated>
+    </task>
+    <task id="LOCAL-00031" summary="增加 无监督学习算法-k-means 算法笔记">
+      <created>1651766917182</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1651766917182</updated>
+    </task>
+    <task id="LOCAL-00032" summary="增加 120 - 聚类算法 - k-means - 超市用户聚类">
+      <created>1651768897225</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1651768897225</updated>
+    </task>
+    <task id="LOCAL-00033" summary="增加 思维导图">
+      <created>1651771333474</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1651771333474</updated>
+    </task>
+    <task id="LOCAL-00034" summary="增加 Sklearn 常用 API 的思维导图">
+      <created>1651862067894</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1651862067894</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -377,13 +435,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="增加 105" />
-    <MESSAGE value="增加 105 - 朴素贝叶斯算法" />
-    <MESSAGE value="增加 lab1 中的第一题（朴素贝叶斯算法对测试集和预测集准确率）" />
-    <MESSAGE value="增加 不同距离公式对KNN 算法的影响及 KNN 算法对玻璃品质的预测" />
-    <MESSAGE value="增加 决策树笔记" />
-    <MESSAGE value="增加 决策树对鸢尾花分类" />
-    <MESSAGE value="增加 泰坦尼克号乘客生存预测" />
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="增加 随机森林笔记" />
     <MESSAGE value="增加 随机森林对泰坦尼克乘客生存预测" />
     <MESSAGE value="增加 KNN 算法、朴素贝叶斯算法、决策树、随机森林的思维导图" />
@@ -402,12 +454,19 @@
     <MESSAGE value="增加 逻辑回归 笔记" />
     <MESSAGE value="增加 115 - 癌症分类预测-良／恶性乳腺癌肿瘤预测" />
     <MESSAGE value="增加 精确率和召回率：115 - 癌症分类预测-良／恶性乳腺癌肿瘤预测" />
-    <option name="LAST_COMMIT_MESSAGE" value="增加 精确率和召回率：115 - 癌症分类预测-良／恶性乳腺癌肿瘤预测" />
+    <MESSAGE value="增加 ROC 曲线的绘制" />
+    <MESSAGE value="增加 PR 曲线的绘制" />
+    <MESSAGE value="增加 模型的保存和加载" />
+    <MESSAGE value="增加 无监督学习算法-k-means 算法笔记" />
+    <MESSAGE value="增加 120 - 聚类算法 - k-means - 超市用户聚类" />
+    <MESSAGE value="增加 思维导图" />
+    <MESSAGE value="增加 Sklearn 常用 API 的思维导图" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加 Sklearn 常用 API 的思维导图" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Scikit_learn$.coverage" NAME="决策树对鸢尾花分类 覆盖结果" MODIFIED="1651237639606" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/110 - 分类算法 - 决策树 - 鸢尾花分类" />
     <SUITE FILE_PATH="coverage/Scikit_learn$100___k_.coverage" NAME="100 - k-近邻算法 覆盖结果" MODIFIED="1650533443496" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/100 - 分类算法 - k-近邻算法" />
-    <SUITE FILE_PATH="coverage/Scikit_learn$130___.coverage" NAME="130 - 波士顿房价预测 覆盖结果" MODIFIED="1651681392006" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/130 - 回归算法 - 线性回归 - 波士顿房价预测" />
+    <SUITE FILE_PATH="coverage/Scikit_learn$130___.coverage" NAME="130 - 波士顿房价预测 覆盖结果" MODIFIED="1651762835126" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/130 - 回归算法 - 线性回归 - 波士顿房价预测" />
     <SUITE FILE_PATH="coverage/Scikit_learn$105___20.coverage" NAME="105 - 20类文章分类 覆盖结果" MODIFIED="1650833095153" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/105 - 分类算法 - 朴素贝叶斯算法 - 20 类文章分类" />
     <SUITE FILE_PATH="coverage/Scikit_learn$010___.coverage" NAME="010 - 特征提取 覆盖结果" MODIFIED="1651237560544" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/010 - 特征工程 - 特征抽取" />
   </component>
