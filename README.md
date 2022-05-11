@@ -2465,8 +2465,15 @@ k聚类动态效果图：
 
 
 
-### 轮廓系数法
+### 轮廓系数法（Silhouette Coefficient）
 
+**目的：**
+
+ 内部距离最小化，外部距离最大化
+
+
+
+结合了聚类的凝聚度（Cohesion）和分离度（Separation），用于评估聚类的效果：
 $$
 SC_{i}=\frac{b_{i-} a_{i}}{\max \left(b_{i}, a_{i}\right)}
 $$
@@ -2475,6 +2482,51 @@ $$
 - $a_i$ 为 i 到**本族群**中其他样本距离的平均值
 
 由公式和**低内聚高耦合**可知，好的效果应该是 $b_i<<a_i$。轮廓系数法的取值是介于 [+1, -1] 之前，越趋近于 1，效果越好。
+
+
+
+**举例：**
+
+下图是500个样本含有2个feature的数据分布情况，我们对它进行SC系数效果衡量：
+
+<img src="doc/pic/README/sc2.png" alt="image-20190219175321181" style="zoom:50%;" />
+
+n_clusters 分别为 2，3，4，5，6时，SC系数如下，是介于[-1,1]之间的度量指标：
+
+**n_clusters = 2 The average silhouette_score is : 0.7049787496083262**
+
+n_clusters = 3 The average silhouette_score is : 0.5882004012129721
+
+**n_clusters = 4 The average silhouette_score is : 0.6505186632729437**
+
+n_clusters = 5 The average silhouette_score is : 0.56376469026194
+
+n_clusters = 6 The average silhouette_score is : 0.4504666294372765
+
+
+
+**每次聚类后，每个样本都会得到一个轮廓系数，当它为1时，说明这个点与周围簇距离较远，结果非常好，当它为0，说明这个点可能处在两个簇的边界上，当值为负时，暗含该点可能被误分了。**
+
+
+
+**从平均SC系数结果来看，K取3，5，6是不好的，那么2和4呢？**
+
+- k=2 的情况：
+
+    <img src="doc/pic/README/sc3.png" alt="image-20190219175529440" style="zoom:50%;" />
+
+- k=4 的情况：
+    <img src="doc/pic/README/sc4.png" alt="image-20190219175611967" style="zoom:50%;" />
+
+
+
+n_clusters = 2时，第0簇的宽度远宽于第1簇；
+
+n_clusters = 4时，所聚的簇宽度相差不大，==因此选择K=4，作为最终聚类个数。==
+
+
+
+
 
 
 
