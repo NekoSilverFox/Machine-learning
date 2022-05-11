@@ -2380,7 +2380,7 @@ $$
 
 
 
-## 聚类算法
+# 聚类算法
 
 **使用不同的聚类准则，产生的聚类结果不同**。
 
@@ -2412,7 +2412,7 @@ $$
 
 
 
-### K-means 算法
+## K-means 算法
 
 K-means 算法是一种聚类算法，并且属于无监督学习的一种（无监督学习就是没有目标值的）
 
@@ -2435,17 +2435,61 @@ k聚类动态效果图：
 
 **API：**
 
-`sklearn.cluster.KMeans(n_clusters=8, init='k-means++')` k-means 聚类，注意函数名是 ==KMeans==，不是==k_means==！
+`sklearn.cluster.KMeans(n_clusters=8, init='k-means++', max_iter=300)` k-means 聚类，注意函数名是 ==KMeans==，不是==k_means==！
 
 - 参数:
     - `n_clusters`：开始的聚类中心数量（簇的数量），整型，缺省值=8，生成的聚类数，即产生的质心（centroids）数。
-    - `init`：初始化方法，默认方法为“k-means++”
+    - `init`：初始化方法，默认方法为 `'k-means++'`
+    - `max_itet`：最大迭代次数
 - 方法:
     - estimator.fit(x)，**注意，因为我们 k-means 是无监督学习，没有目标值，所以只传目标值**
     - estimator.predict(x)
     - estimator.fit_predict(x) 计算聚类中心并预测每个样本属于哪个类别,相当于先调用fit(x),然后再调用predict(x)
 - 属性：
     - `labels_`：默认标记的类型，可以和真实值比较（不是值比较）
+
+
+
+**KMeans 算法优缺点：**
+
+- **优点**
+    - 使用递归方法，清晰清晰明了
+- **缺点**
+    - 如果随机初始点选取的很接近，很容易陷入局部最优解（可以多聚类几次）
+
+## 评估聚类效果
+
+我们想要的好的聚类效果是 —— **低内聚，高耦合**。也就是说，每个族内部的点很聚集，但族与族之间的距离又是比较远的。
+
+<img src="doc/pic/README/image-20220511165856744.png" alt="image-20220511165856744" style="zoom:33%;" />
+
+
+
+### 轮廓系数法
+
+$$
+SC_{i}=\frac{b_{i-} a_{i}}{\max \left(b_{i}, a_{i}\right)}
+$$
+
+- $b_i$ 为一个族群中的点 i 到**其他族群**中所有样本距离的最小值
+- $a_i$ 为 i 到**本族群**中其他样本距离的平均值
+
+由公式和**低内聚高耦合**可知，好的效果应该是 $b_i<<a_i$。轮廓系数法的取值是介于 [+1, -1] 之前，越趋近于 1，效果越好。
+
+
+
+**API：**
+
+`sklearn.metrics.silhouette_score(X, labels)` 计算所有样本的平均轮廓系数
+
+- `X`：特征值
+- `labels`：被聚类之后标记的目标值，也就是 `estimator.predict(X=data)` 预测的结果
+
+
+
+
+
+
 
 ---
 
@@ -3566,7 +3610,9 @@ $$
 
 > 注：$y^i$ 为预测值，$¯y$ 为真实值
 
-**均方误差越小越好！**
+==**均方误差越小越好！**==
+
+
 
 `sklearn.metrics.mean_squared_error(y_true, y_pred)` 均方误差回归损失
 
