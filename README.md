@@ -2380,167 +2380,6 @@ $$
 
 
 
-# 聚类算法
-
-**使用不同的聚类准则，产生的聚类结果不同**。
-
-<img src="doc/pic/README/cluster1.png" alt="image-20190219161521139" style="zoom:50%;" />
-
-
-
-**聚类算法在现实中的应用**：
-
-- 用户画像，广告推荐，Data Segmentation，搜索引擎的流量推荐，恶意流量识别
-- 基于位置信息的商业推送，新闻聚类，筛选排序
-- 图像分割，降维，识别；离群点检测；信用卡异常消费；发掘相同功能的基因片段
-
-<img src="doc/pic/README/cluster3.png" alt="img" style="zoom:50%;" />
-
-**聚类算法的概念**：
-
-**聚类算法**：
-
-一种典型的**无监督**学习算法，**主要用于将相似的样本自动归到一个类别中**。
-
-**在聚类算法中根据样本之间的相似性，将样本划分到不同的类别中，对于不同的相似度计算方法，会得到不同的聚类结果，常用的相似度计算方法有欧式距离法。**
-
-
-
-**聚类算法与分类算法最大的区别：**
-
-聚类算法是无监督学习算法，而分类算法属于监督学习算法。
-
-
-
-## K-means 算法
-
-K-means 算法是一种聚类算法，并且属于无监督学习的一种（无监督学习就是没有目标值的）
-
-
-
-**k-means聚类步骤：**
-
-1. 随机设置K个特征空间内的点作为初始的聚类中心
-2. 对于其他每个点计算到K个中心的距离，未知的点选择最近的一个聚类中心点作为标记类别
-3. 接着对着标记的聚类中心之后，重新计算出每个聚类的新中心点（平均值）
-4. 如果计算得出的新中心点与原中心点一样（质心不再移动），那么结束，否则重新进行第二步过程
-
-<img src="doc/pic/README/K-means过程分析.png" alt="K-meansè¿‡ç¨‹åˆ†æž" style="zoom:50%;" />
-
-k聚类动态效果图：
-
-<img src="doc/pic/README/kmeans_dynamic.png" alt="2019-02-19 17.06.49" style="zoom:50%;" />
-
-
-
-**API：**
-
-`sklearn.cluster.KMeans(n_clusters=8, init='k-means++', max_iter=300)` k-means 聚类，注意函数名是 ==KMeans==，不是==k_means==！
-
-- 参数:
-    - `n_clusters`：开始的聚类中心数量（簇的数量），整型，缺省值=8，生成的聚类数，即产生的质心（centroids）数。
-    - `init`：初始化方法，默认方法为 `'k-means++'`
-    - `max_itet`：最大迭代次数
-- 方法:
-    - estimator.fit(x)，**注意，因为我们 k-means 是无监督学习，没有目标值，所以只传目标值**
-    - estimator.predict(x)
-    - estimator.fit_predict(x) 计算聚类中心并预测每个样本属于哪个类别,相当于先调用fit(x),然后再调用predict(x)
-- 属性：
-    - `labels_`：默认标记的类型，可以和真实值比较（不是值比较）
-
-
-
-**KMeans 算法优缺点：**
-
-- **优点**
-    - 使用递归方法，清晰清晰明了
-- **缺点**
-    - 如果随机初始点选取的很接近，很容易陷入局部最优解（可以多聚类几次）
-
-## 评估聚类效果
-
-我们想要的好的聚类效果是 —— **低内聚，高耦合**。也就是说，每个族内部的点很聚集，但族与族之间的距离又是比较远的。
-
-<img src="doc/pic/README/image-20220511165856744.png" alt="image-20220511165856744" style="zoom:33%;" />
-
-
-
-### 轮廓系数法（Silhouette Coefficient）
-
-**目的：**
-
- 内部距离最小化，外部距离最大化
-
-
-
-结合了聚类的凝聚度（Cohesion）和分离度（Separation），用于评估聚类的效果：
-$$
-SC_{i}=\frac{b_{i-} a_{i}}{\max \left(b_{i}, a_{i}\right)}
-$$
-
-- $b_i$ 为一个族群中的点 i 到**其他族群**中所有样本距离的最小值
-- $a_i$ 为 i 到**本族群**中其他样本距离的平均值
-
-由公式和**低内聚高耦合**可知，好的效果应该是 $b_i<<a_i$。轮廓系数法的取值是介于 [+1, -1] 之前，越趋近于 1，效果越好。
-
-
-
-**举例：**
-
-下图是500个样本含有2个feature的数据分布情况，我们对它进行SC系数效果衡量：
-
-<img src="doc/pic/README/sc2.png" alt="image-20190219175321181" style="zoom:50%;" />
-
-n_clusters 分别为 2，3，4，5，6时，SC系数如下，是介于[-1,1]之间的度量指标：
-
-**n_clusters = 2 The average silhouette_score is : 0.7049787496083262**
-
-n_clusters = 3 The average silhouette_score is : 0.5882004012129721
-
-**n_clusters = 4 The average silhouette_score is : 0.6505186632729437**
-
-n_clusters = 5 The average silhouette_score is : 0.56376469026194
-
-n_clusters = 6 The average silhouette_score is : 0.4504666294372765
-
-
-
-**每次聚类后，每个样本都会得到一个轮廓系数，当它为1时，说明这个点与周围簇距离较远，结果非常好，当它为0，说明这个点可能处在两个簇的边界上，当值为负时，暗含该点可能被误分了。**
-
-
-
-**从平均SC系数结果来看，K取3，5，6是不好的，那么2和4呢？**
-
-- k=2 的情况：
-
-    <img src="doc/pic/README/sc3.png" alt="image-20190219175529440" style="zoom:50%;" />
-
-- k=4 的情况：
-    <img src="doc/pic/README/sc4.png" alt="image-20190219175611967" style="zoom:50%;" />
-
-
-
-n_clusters = 2时，第0簇的宽度远宽于第1簇；
-
-n_clusters = 4时，所聚的簇宽度相差不大，==因此选择K=4，作为最终聚类个数。==
-
-
-
-
-
-
-
-**API：**
-
-`sklearn.metrics.silhouette_score(X, labels)` 计算所有样本的平均轮廓系数
-
-- `X`：特征值
-- `labels`：被聚类之后标记的目标值，也就是 `estimator.predict(X=data)` 预测的结果
-
-
-
-
-
 
 
 ---
@@ -3084,6 +2923,223 @@ sklearn 中支持**向量==分类-C==**主要有三种方法:
 - SVR
 - NuSVR
 - LinearSVR
+
+
+
+---
+
+
+
+
+
+# 聚类算法
+
+**使用不同的聚类准则，产生的聚类结果不同**。
+
+<img src="doc/pic/README/cluster1.png" alt="image-20190219161521139" style="zoom:50%;" />
+
+
+
+**聚类算法在现实中的应用**：
+
+- 用户画像，广告推荐，Data Segmentation，搜索引擎的流量推荐，恶意流量识别
+- 基于位置信息的商业推送，新闻聚类，筛选排序
+- 图像分割，降维，识别；离群点检测；信用卡异常消费；发掘相同功能的基因片段
+
+<img src="doc/pic/README/cluster3.png" alt="img" style="zoom:50%;" />
+
+**聚类算法的概念**：
+
+**聚类算法**：
+
+一种典型的**无监督**学习算法，**主要用于将相似的样本自动归到一个类别中**。
+
+**在聚类算法中根据样本之间的相似性，将样本划分到不同的类别中，对于不同的相似度计算方法，会得到不同的聚类结果，常用的相似度计算方法有欧式距离法。**
+
+
+
+**聚类算法与分类算法最大的区别：**
+
+聚类算法是无监督学习算法，而分类算法属于监督学习算法。
+
+
+
+## K-means 算法
+
+K-means 算法是一种聚类算法，并且属于无监督学习的一种（无监督学习就是没有目标值的）
+
+
+
+**k-means聚类步骤：**
+
+1. 随机设置K个特征空间内的点作为初始的聚类中心
+2. 对于其他每个点计算到K个中心的距离，未知的点选择最近的一个聚类中心点作为标记类别
+3. 接着对着标记的聚类中心之后，重新计算出每个聚类的新中心点（平均值）
+4. 如果计算得出的新中心点与原中心点一样（质心不再移动），那么结束，否则重新进行第二步过程
+
+<img src="doc/pic/README/K-means过程分析.png" alt="K-meansè¿‡ç¨‹åˆ†æž" style="zoom:50%;" />
+
+k聚类动态效果图：
+
+<img src="doc/pic/README/kmeans_dynamic.png" alt="2019-02-19 17.06.49" style="zoom:50%;" />
+
+
+
+**API：**
+
+`sklearn.cluster.KMeans(n_clusters=8, init='k-means++', max_iter=300)` k-means 聚类，注意函数名是 ==KMeans==，不是==k_means==！
+
+- 参数:
+    - `n_clusters`：开始的聚类中心数量（簇的数量），整型，缺省值=8，生成的聚类数，即产生的质心（centroids）数。
+    - `init`：初始化方法，默认方法为 `'k-means++'`
+    - `max_itet`：最大迭代次数
+- 方法:
+    - estimator.fit(x)，**注意，因为我们 k-means 是无监督学习，没有目标值，所以只传目标值**
+    - estimator.predict(x)
+    - estimator.fit_predict(x) 计算聚类中心并预测每个样本属于哪个类别,相当于先调用fit(x),然后再调用predict(x)
+- 属性：
+    - `labels_`：默认标记的类型，可以和真实值比较（不是值比较）
+
+
+
+**KMeans 算法优缺点：**
+
+- **优点**
+    - 使用递归方法，清晰清晰明了
+- **缺点**
+    - 如果随机初始点选取的很接近，很容易陷入局部最优解（可以多聚类几次）
+
+## 评估聚类效果
+
+我们想要的好的聚类效果是 —— **低内聚，高耦合**。也就是说，每个族内部的点很聚集，但族与族之间的距离又是比较远的。
+
+<img src="doc/pic/README/image-20220511165856744.png" alt="image-20220511165856744" style="zoom:33%;" />
+
+
+
+### 轮廓系数法（Silhouette Coefficient）
+
+**目的：**
+
+内部距离最小化，外部距离最大化
+
+
+
+结合了聚类的凝聚度（Cohesion）和分离度（Separation），用于评估聚类的效果：
+$$
+SC_{i}=\frac{b_{i-} a_{i}}{\max \left(b_{i}, a_{i}\right)}
+$$
+
+- $b_i$ 为一个族群中的点 i 到**其他族群**中所有样本距离的最小值
+- $a_i$ 为 i 到**本族群**中其他样本距离的平均值
+
+由公式和**低内聚高耦合**可知，好的效果应该是 $b_i<<a_i$。轮廓系数法的取值是介于 [+1, -1] 之前，越趋近于 1，效果越好。
+
+
+
+**举例：**
+
+下图是500个样本含有2个feature的数据分布情况，我们对它进行SC系数效果衡量：
+
+<img src="doc/pic/README/sc2.png" alt="image-20190219175321181" style="zoom:50%;" />
+
+n_clusters 分别为 2，3，4，5，6时，SC系数如下，是介于[-1,1]之间的度量指标：
+
+**n_clusters = 2 The average silhouette_score is : 0.7049787496083262**
+
+n_clusters = 3 The average silhouette_score is : 0.5882004012129721
+
+**n_clusters = 4 The average silhouette_score is : 0.6505186632729437**
+
+n_clusters = 5 The average silhouette_score is : 0.56376469026194
+
+n_clusters = 6 The average silhouette_score is : 0.4504666294372765
+
+
+
+**每次聚类后，每个样本都会得到一个轮廓系数，当它为1时，说明这个点与周围簇距离较远，结果非常好，当它为0，说明这个点可能处在两个簇的边界上，当值为负时，暗含该点可能被误分了。**
+
+
+
+**从平均SC系数结果来看，K取3，5，6是不好的，那么2和4呢？**
+
+- k=2 的情况：
+
+    <img src="doc/pic/README/sc3.png" alt="image-20190219175529440" style="zoom:50%;" />
+
+- k=4 的情况：
+    <img src="doc/pic/README/sc4.png" alt="image-20190219175611967" style="zoom:50%;" />
+
+
+
+n_clusters = 2时，第0簇的宽度远宽于第1簇；
+
+n_clusters = 4时，所聚的簇宽度相差不大，==因此选择K=4，作为最终聚类个数。==
+
+
+
+**API：**
+
+`sklearn.metrics.silhouette_score(X, labels)` 计算所有样本的平均轮廓系数
+
+- `X`：特征值
+- `labels`：被聚类之后标记的目标值，也就是 `estimator.predict(X=data)` 预测的结果
+
+
+
+---
+
+### 误差平方和（SSE）
+
+SEE - The sum of squares due to error
+
+举例:(下图中数据-0.2, 0.4, -0.8, 1.3, -0.7, 均为真实值和预测值的差)
+
+所以说：**误差平方和（SSE）既可以用于线性回归的评估，又可以用于聚类算法的评估**
+
+![image-20190308211436382](doc/pic/README/sse1.png)
+
+
+
+在k-means中的应用:
+$$
+S S E=\sum_{i=1}^{\mathrm{k}} \sum_{p \in C_{i}}\left|p-m_{i}\right|^{2}
+$$
+<img src="doc/pic/README/image-20220511172607477.png" alt="image-20220511172607477" style="zoom:50%;" />
+
+公式各部分内容:
+
+<img src="doc/pic/README/image-20220511172648462.png" alt="image-20220511172648462" style="zoom:50%;" />
+
+上图中: k=2
+
+- **SSE图最终的结果,对图松散度的衡量.**(eg: **SSE(左图)<SSE(右图)**)
+
+- SSE随着聚类迭代,其值会越来越小,直到最后趋于稳定:
+
+    ![2019-02-19 17.38.11](doc/pic/README/sse5.png)
+
+- **如果质心的初始值选择不好,SSE只会达到一个不怎么好的局部最优解**
+
+    ![2019-02-19 17.39.29](doc/pic/README/sse6.png)
+
+
+
+**API：**
+
+
+
+### “肘”方法（Elbow method）
+
+**“肘”方法 (Elbow method)** — K值确定
+
+![image-20190219174520309](doc/pic/README/elbow_method.png)
+
+1. 对于n个点的数据集，迭代计算k from 1 to n，每次聚类完成后计算每个点到其所属的**簇中心**的距离的平方和
+2. 平方和是会逐渐变小的，直到k==n时平方和为0，因为每个点都是它所在的簇中心本身（也就是说有多少个点，就分成了多少类|族，自己就是中心）
+3. 在这个平方和变化过程中，会出现一个拐点也即“肘”点，**下降率突然变缓时即认为是最佳的k值**
+
+在决定什么时候停止训练时，肘形判据同样有效，数据通常有更多的噪音，在**增加分类无法带来更多回报时，我们停止增加类别（k 值）**
 
 
 
