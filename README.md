@@ -2990,15 +2990,24 @@ k聚类动态效果图：
 `sklearn.cluster.KMeans(n_clusters=8, init='k-means++', max_iter=300)` k-means 聚类，注意函数名是 ==KMeans==，不是==k_means==！
 
 - 参数:
+
     - `n_clusters`：开始的聚类中心数量（簇的数量），整型，缺省值=8，生成的聚类数，即产生的质心（centroids）数。
     - `init`：初始化方法，默认方法为 `'k-means++'`
     - `max_itet`：最大迭代次数
+
 - 方法:
+
     - estimator.fit(x)，**注意，因为我们 k-means 是无监督学习，没有目标值，所以只传目标值**
     - estimator.predict(x)
     - estimator.fit_predict(x) 计算聚类中心并预测每个样本属于哪个类别,相当于先调用fit(x),然后再调用predict(x)
+
 - 属性：
+
     - `labels_`：默认标记的类型，可以和真实值比较（不是值比较）
+
+    - `inertia_`：聚类结束后，每个样本到其最近的聚类中心的距离**平方总和**，如果提供的话，用样本权重加权。
+
+        **==“肘”方法中使用平方和用于确定最佳 k 值==**
 
 
 
@@ -3137,11 +3146,34 @@ $$
 
 1. 对于n个点的数据集，迭代计算k from 1 to n，每次聚类完成后计算每个点到其所属的**簇中心**的距离的平方和
 2. 平方和是会逐渐变小的，直到k==n时平方和为0，因为每个点都是它所在的簇中心本身（也就是说有多少个点，就分成了多少类|族，自己就是中心）
-3. 在这个平方和变化过程中，会出现一个拐点也即“肘”点，**下降率突然变缓时即认为是最佳的k值**
+3. 在这个平方和变化过程中，会出现一个拐点也即“肘”点，**==下降率突然变缓时即认为是最佳的k值==**
 
 在决定什么时候停止训练时，肘形判据同样有效，数据通常有更多的噪音，在**增加分类无法带来更多回报时，我们停止增加类别（k 值）**
 
 
+
+**API：**
+
+> https://www.jianshu.com/p/335b376174d4
+
+```python
+import pandas as pd
+from sklearn.cluster import KMeans
+import matplotlib.pyplot as plt
+ 
+df_features = pd.read_csv(r'C:\预处理后数据.csv',encoding='gbk') # 读入数据
+'利用SSE选择k'
+SSE = []  # 存放每次结果的误差平方和
+for k in range(1,9):
+    estimator = KMeans(n_clusters=k)  # 构造聚类器
+    estimator.fit(df_features[['R','F','M']])
+    SSE.append(estimator.inertia_)  # estimator.inertia_获取各点到其聚类中心的平方和
+X = range(1,9)
+plt.xlabel('k')
+plt.ylabel('SSE')
+plt.plot(X,SSE,'o-')
+plt.show()
+```
 
 
 
