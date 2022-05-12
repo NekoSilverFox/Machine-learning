@@ -4,16 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7190a85b-e59c-461c-8efb-4f4ee5b77b1c" name="变更" comment="增加 思维导图 - DBSCAN，层次聚类法">
-      <change afterPath="$PROJECT_DIR$/125 - 聚类算法 - SPbSTU - lab3/fox.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/125 - 聚类算法 - SPbSTU - lab3/result/DBSCAN_clustering_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/125 - 聚类算法 - SPbSTU - lab3/result/DBSCAN_clustering_2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/125 - 聚类算法 - SPbSTU - lab3/result/DBSCAN_clustering_3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/125 - 聚类算法 - SPbSTU - lab3/result/fox_mix.png" afterDir="false" />
+    <list default="true" id="7190a85b-e59c-461c-8efb-4f4ee5b77b1c" name="变更" comment="增加 Политех - lab4 - 集成学习文件">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/125 - 聚类算法 - SPbSTU - lab3/lab3 - 聚类算法.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/125 - 聚类算法 - SPbSTU - lab3/lab3 - 聚类算法.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/125 - 聚类算法 - SPbSTU - lab3/result/pic.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/125 - 聚类算法 - SPbSTU - lab3/result/拼接结果.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/199 - 集成学习 - SPbSTU - lab4/lab4 - 集成学习.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/199 - 集成学习 - SPbSTU - lab4/lab4 - 集成学习.ipynb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -202,21 +195,7 @@
       <workItem from="1651837619147" duration="7701000" />
       <workItem from="1652004517940" duration="3138000" />
       <workItem from="1652203237910" duration="164000" />
-      <workItem from="1652258843664" duration="8450000" />
-    </task>
-    <task id="LOCAL-00003" summary="增加 105 - 朴素贝叶斯算法">
-      <created>1650833165418</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1650833165418</updated>
-    </task>
-    <task id="LOCAL-00004" summary="增加 lab1 中的第一题（朴素贝叶斯算法对测试集和预测集准确率）">
-      <created>1650881614591</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1650881614591</updated>
+      <workItem from="1652258843664" duration="9572000" />
     </task>
     <task id="LOCAL-00005" summary="增加 不同距离公式对KNN 算法的影响及 KNN 算法对玻璃品质的预测">
       <created>1650889552173</created>
@@ -547,7 +526,21 @@
       <option name="project" value="LOCAL" />
       <updated>1652366327734</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="完成 Политех - 机器学习lab3">
+      <created>1652374421386</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1652374421386</updated>
+    </task>
+    <task id="LOCAL-00053" summary="增加 Политех - lab4 - 集成学习文件">
+      <created>1652378419150</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1652378419150</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -566,8 +559,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="增加 精确率和召回率：115 - 癌症分类预测-良／恶性乳腺癌肿瘤预测" />
-    <MESSAGE value="增加 ROC 曲线的绘制" />
     <MESSAGE value="增加 PR 曲线的绘制" />
     <MESSAGE value="增加 模型的保存和加载" />
     <MESSAGE value="增加 无监督学习算法-k-means 算法笔记" />
@@ -591,7 +582,9 @@
     <MESSAGE value="增加 层次聚类 Hierarchical Clustering 笔记" />
     <MESSAGE value="增加 lab3 - 聚类算法 第一题和第二题的部分" />
     <MESSAGE value="增加 思维导图 - DBSCAN，层次聚类法" />
-    <option name="LAST_COMMIT_MESSAGE" value="增加 思维导图 - DBSCAN，层次聚类法" />
+    <MESSAGE value="完成 Политех - 机器学习lab3" />
+    <MESSAGE value="增加 Политех - lab4 - 集成学习文件" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加 Политех - lab4 - 集成学习文件" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Scikit_learn$.coverage" NAME="决策树对鸢尾花分类 覆盖结果" MODIFIED="1651237639606" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/110 - 分类算法 - 决策树 - 鸢尾花分类" />
