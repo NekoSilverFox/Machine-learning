@@ -3035,7 +3035,7 @@ DBSCAN 可用于解决带有嵌套关系的，比如下图。如果使用 K-Mean
 
 **API：**
 
-`sklearn.cluster.AgglomerativeClustering(n_clusters=2, )`
+`sklearn.cluster.AgglomerativeClustering(n_clusters=2, linkage='ward')`
 
 **方法：**
 
