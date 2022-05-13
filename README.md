@@ -1853,15 +1853,17 @@ $$
 
 
 
-**API：**
+### API
 
 在scikit-learn中，一共有3个朴素贝叶斯的分类算法类。分别是`GaussianNB`，`MultinomialNB` 和 `BernoulliNB`。其中
 
 - `GaussianNB` 就是先验为`高斯分布`的朴素贝叶斯，适用于**样本特征的分布大部分是连续值**
 - `MultinomialNB` 就是先验为`多项式分布`的朴素贝叶斯，适用于**样本特征的分大部分是多元离散值**
-- i，适用于**样本特征是二元离散值或者很稀疏的多元离散值**
+- `BernoulliNB`，适用于**样本特征是二元离散值或者很稀疏的多元离散值**
 
 
+
+---
 
 ## 决策树
 
@@ -4042,6 +4044,24 @@ $$
 
 
 
+## 集成学习算法
+
+> https://www.cnblogs.com/zongfa/p/9304353.html
+
+**决策树与这些算法框架进行结合所得到的新的算法：**
+
+　　1）Bagging + 决策树 = 随机森林
+
+　　2）AdaBoost + 决策树 = 提升树
+
+　　3）Gradient Boosting + 决策树 = GBDT
+
+
+
+
+
+
+
 ## boosting 和 Bagging
 
 ==**只要单分类器的表现不太差，集成学习的结果总是要好于单分类器的**==
@@ -4100,6 +4120,12 @@ $$
         - 如果不进行随机抽样，每棵树的训练集都一样，那么最终训练出的树分类结果也是完全一样的
     - 2.为什么要有放回地抽样？
         - 如果不是有放回的抽样，那么每棵树的训练样本都是不同的，都是没有交集的，这样每棵树都是“有偏的”，都是绝对“片面的”（当然这样说可能不对），也就是说每棵树训练出来都是有很大的差异的；而**随机森林最后分类取决于多棵树（弱分类器）的投票表决**。
+
+
+
+
+
+
 
 
 
@@ -4181,9 +4207,77 @@ $$
 
 
 
-**AdaBoost的构造过程小结**
+**AdaBoost的构造过程小结：**
 
 <img src="doc/pic/README/boosting10.png" alt="image-20190214161432444" style="zoom:50%;" />
+
+
+
+## AdaBoosting API
+
+可以通过 Sklearn 提供的 API 构建自己的 AdaBoosting + 算法的预估器。
+
+> https://stackoverflow.com/questions/18306416/adaboostclassifier-with-different-base-learners
+
+
+
+**但是提供的预估器，必须具有 `sample_weight` 属性！并且 AdaBoost 最好与弱分类器一起使用，如果利用 SVM 这种强分类器容易造成过拟合**
+
+支持的 base_estimator 有：
+
+```python
+import inspect
+from sklearn.utils.testing import all_estimators
+for name, clf in all_estimators(type_filter='classifier'):
+    if 'sample_weight' in inspect.getargspec(clf().fit)[0]:
+       print name
+    
+    
+>>>
+AdaBoostClassifier,
+BernoulliNB,
+DecisionTreeClassifier,
+ExtraTreeClassifier,
+ExtraTreesClassifier,
+MultinomialNB,
+NuSVC,
+Perceptron,
+RandomForestClassifier,
+RidgeClassifierCV,
+SGDClassifier,
+SVC
+```
+
+如果分类器没有实现`predict_proba`，则必须设置 AdaBoostClassifier 参数 algorithm = 'SAMME'。
+
+
+
+
+
+`sklearn.ensemble.AdaBoostClassifier(n_estimators=50, learning_rate=1.0, algorithm='SAMME.R', random_state=)` AdaBoost 分类器是一种元估计器，它首先在原始数据集上拟合分类器，然后在同一数据集上拟合分类器的其他副本
+
+**参数说明：**
+
+- `n_estimators`: 终止提升的估计器的最大数量。在完美契合的情况下，学习过程会提前停止。
+
+- `learning_rate`: 在每次提升迭代中应用于每个分类器的权重。更高的学习率会增加每个分类器的贡献。`learning_rate`在和`n_estimators`参数之间有一个权衡。值必须在范围内。`(0.0, inf)`
+
+- `algorithm`: `{'SAMME', 'SAMME.R'}`
+
+    如果是“SAMME.R”，则使用 SAMME.R 实数提升算法。 `base_estimator`必须支持类概率的计算。如果是“SAMME”，则使用 SAMME 离散增强算法。SAMME.R 算法通常比 SAMME 收敛得更快，以更少的提升迭代实现更低的测试误差
+
+    
+
+**预估器属性：**
+
+- `base_estimator_`: 最佳预估器
+- `estimators_`: 分类器列表，拟合子估计器的集合。
+- `estimator_weights_`: ndarry - 集成中每个估计器的权重
+- `estimator_errors_`: ndarry - 集成中每个估计器的分类误差
+
+
+
+
 
 **bagging集成与boosting集成的区别：**
 
