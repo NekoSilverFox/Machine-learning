@@ -1351,7 +1351,49 @@ $$
 
 ---
 
+## 数据欠采样
 
+如果数据量很多，我们想减少数据量。那么就需要欠采样。
+
+
+
+**欠采样需要主要的问题：**
+
+我们不能简单的对数据进行截取，比如截取前 1000 行 data[:1000]，因为前 1000 行中可能只包含了一种目标值，而源数据中是有 5 个目标值。所以就需要一种方式来达到抽样平衡的问题——每个目标值都有同等对应的数据量
+
+
+
+**API：**
+
+`imblearn.under_sampling.RandomUnderSampler(random_state=)` 获取欠采样转换器对象
+
+**转换器方法：**
+
+- x_data, y_data = transfer.fit_resample(x_data, y_data)
+
+
+
+---
+
+## 目标值转数字
+
+在某些情况下，我们需要把目标值转换为数字，以方便处理和模型学习
+
+
+
+**API：**
+
+`sklearn.preprocessing.LabelEncoder()` 获取转换器对象
+
+**转化器方法：**
+
+- `transfer.fit_transform(y=)` 注意传递的是 y
+
+
+
+
+
+---
 
 # 分类算法
 
@@ -4095,7 +4137,87 @@ $$
 
 
 
+## Boosting
 
+**什么是 boosting：**
+
+随着学习的积累从弱到强，就像游戏角色逐渐升级变强。
+
+**简而言之：每新加入一个弱学习器，整体能力就会得到提升**
+
+代表算法：Adaboost，GBDT，XGBoost
+
+
+
+### 实现过程
+
+1. 训练第一个学习器
+    <img src="doc/pic/README/boosting2.png" alt="image-20190214160657608" style="zoom:50%;" />
+
+2. 调整数据分布
+    <img src="doc/pic/README/boosting3.png" alt="image-20190214160727582" style="zoom:50%;" />
+
+3. 训练第二个学习器
+
+    <img src="doc/pic/README/boostin4.png" alt="image-20190214160805813" style="zoom:50%;" />
+
+4. 再次调整数据分布
+    <img src="doc/pic/README/boosting5.png" alt="image-20190214160900951" style="zoom:50%;" />
+
+5. 依次训练学习器，调整数据分布
+    <img src="doc/pic/README/boosting6.png" alt="image-20190214160951473" style="zoom:50%;" />
+
+6. 整体过程实现
+    <img src="doc/pic/README/boosting7.png" alt="image-20190214161215163" style="zoom:50%;" />
+
+**关键点：**
+
+- **如何确认投票权重？**
+- **如何调整数据分布？**
+
+<img src="doc/pic/README/boosting8.png" alt="image-20190214161243306" style="zoom:50%;" />
+
+<img src="doc/pic/README/boosting9.png" alt="image-20190214161305414" style="zoom:50%;" />
+
+
+
+**AdaBoost的构造过程小结**
+
+<img src="doc/pic/README/boosting10.png" alt="image-20190214161432444" style="zoom:50%;" />
+
+**bagging集成与boosting集成的区别：**
+
+- 区别一:**数据方面**
+    - Bagging：对数据进行采样训练；
+    - Boosting：根据前一轮学习结果调整数据的重要性
+
+
+
+- 区别二:**投票方面**
+    - Bagging：所有学习器**平权投票**；
+    - Boosting：对学习器进行**加权投票**。
+
+
+
+- 区别三:**学习顺序**
+    - Bagging 的学习是并行的，每个学习器没有依赖关系；
+    - Boosting 学习是串行，学习有先后顺序。
+
+
+
+- 区别四:**主要作用**
+    - Bagging 主要用于**提高泛化性能（解决过拟合，也可以说降低方差）**
+    - Boosting主要用于**提高训练精度 （解决欠拟合，也可以说降低偏差）**
+
+<img src="doc/pic/README/baggingVSboosting.png" alt="image-20190214161702237"  />
+
+
+
+
+
+
+
+---
 
 # 分类评估方法
 
