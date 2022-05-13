@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7190a85b-e59c-461c-8efb-4f4ee5b77b1c" name="变更" comment="增加 Политех - lab4 - 集成学习文件">
+    <list default="true" id="7190a85b-e59c-461c-8efb-4f4ee5b77b1c" name="变更" comment="增加 lab5 - 线性回归文件">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/199 - 集成学习 - SPbSTU - lab4/lab4 - 集成学习.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/199 - 集成学习 - SPbSTU - lab4/lab4 - 集成学习.ipynb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -196,13 +195,7 @@
       <workItem from="1652004517940" duration="3138000" />
       <workItem from="1652203237910" duration="164000" />
       <workItem from="1652258843664" duration="9572000" />
-    </task>
-    <task id="LOCAL-00005" summary="增加 不同距离公式对KNN 算法的影响及 KNN 算法对玻璃品质的预测">
-      <created>1650889552173</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1650889552173</updated>
+      <workItem from="1652378892209" duration="1394000" />
     </task>
     <task id="LOCAL-00006" summary="增加 决策树笔记">
       <created>1651236520684</created>
@@ -540,7 +533,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652378419150</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="增加 lab5 - 线性回归文件">
+      <created>1652386817872</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1652386817872</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -559,7 +559,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="增加 PR 曲线的绘制" />
     <MESSAGE value="增加 模型的保存和加载" />
     <MESSAGE value="增加 无监督学习算法-k-means 算法笔记" />
     <MESSAGE value="增加 120 - 聚类算法 - k-means - 超市用户聚类" />
@@ -584,7 +583,8 @@
     <MESSAGE value="增加 思维导图 - DBSCAN，层次聚类法" />
     <MESSAGE value="完成 Политех - 机器学习lab3" />
     <MESSAGE value="增加 Политех - lab4 - 集成学习文件" />
-    <option name="LAST_COMMIT_MESSAGE" value="增加 Политех - lab4 - 集成学习文件" />
+    <MESSAGE value="增加 lab5 - 线性回归文件" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加 lab5 - 线性回归文件" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Scikit_learn$.coverage" NAME="决策树对鸢尾花分类 覆盖结果" MODIFIED="1651237639606" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/110 - 分类算法 - 决策树 - 鸢尾花分类" />
