@@ -4309,6 +4309,24 @@ SVC
 
 
 
+## Stacking 堆叠法
+
+```python
+from sklearn.ensemble import StackingClassifier
+
+estimators = [
+    ('randomforest', RandomForestClassifier(n_estimators=5, random_state=0)),
+    ('分类器 2 名称', estimator2),
+    ...
+	('分类器 2 名称', estimator2)
+]
+
+clf = StackingClassifier(estimators=estimators, final_estimator=最终进行评估的Estimator)
+clf.fit(X_train, y_train).score(X_test, y_test)
+```
+
+
+
 
 
 ---
