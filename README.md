@@ -4677,6 +4677,119 @@ print("AUC指标：", roc_auc_score(y_test, y_predict))
 
 
 
+---
+
+# 深度学习与机器学习的区别
+
+<img src="doc/pic/README/区别.png" alt="区别" style="zoom:50%;" />
+
+**特征提取方面**
+
+- 机器学习的**特征工程步骤是要靠手动完成的，而且需要大量领域专业知识**
+- 深度学习**通常由多个层组成，它们通常将更简单的模型组合在一起，通过将数据从一层传递到另一层来构建更复杂的模型。通过大量数据的训练自动得到模型，不需要人工设计特征提取环节**。
+
+- 深度学习算法试图从数据中学习高级功能，这是深度学习的一个非常独特的部分。因此，减少了为每个问题开发新特征提取器的任务。**适合用在难提取特征的图像、语音、自然语言领域**
+
+
+
+**数据量**
+
+机器学习需要的执行时间远少于深度学习，深度学习参数往往很庞大，需要通过大量数据的多次优化来训练参数。
+
+<img src="doc/pic/README/数据量.png" alt="数据量" style="zoom:50%;" />
+
+- 需要大量的训练数据集
+- 训练深度神经网络需要大量的算力
+- 可能要花费数天、甚至数周的时间，才能使用数百万张图像的数据集训练出一个深度网络。所以以后
+    - 需要强大对的GPU服务器来进行计算
+    - 全面管理的分布式训练与预测服务——比如[谷歌 TensorFlow 云机器学习平台](https://cloud.google.com/ml/)——可能会解决这些问题，为大家提供成本合理的基于云的 CPU 和 GPU
+
+
+
+**算法代表**
+
+- 机器学习
+    - 朴素贝叶斯、决策树等
+- 深度学习
+    - 神经网络
+
+
+
+**深度学习的应用场景**
+
+- 图像识别
+    - 物体识别
+    - 场景识别
+    - 车型识别
+    - 人脸检测跟踪
+    - 人脸关键点定位
+    - 人脸身份认证
+- 自然语言处理技术
+    - 机器翻译
+    - 文本识别
+    - 聊天对话
+- 语音技术
+    - 语音识别
+
+
+
+# TensorFlow
+
+**TensorFlow：**
+
+- Tensor - 张量 - 数据
+- Flow - 流动
+
+
+
+官网：https://www.tensorflow.org/
+
+- 高度灵活（Deep Flexibility）
+
+    - 它不仅是可以用来做神经网络算法研究，也可以用来做普通的机器学习算法，甚至是只要你能够把计算表示成数据流图，都可以用TensorFlow。
+
+    
+
+- 语言多样（Language Options）
+
+    - TensorFlow使用C++实现的，然后用Python封装。谷歌号召社区通过SWIG开发更多的语言接口来支持TensorFlow
+
+    
+
+- 设备支持
+
+    - TensorFlow可以运行在各种硬件上，同时根据计算的需要，合理将运算分配到相应的设备，比如卷积就分配到GPU上，也允许在 CPU 和 GPU 上的计算分布，甚至支持使用 gRPC 进行水平扩展
+
+    
+
+- Tensorboard 可视化
+
+    - TensorBoard是TensorFlow的一组Web应用，用来监控TensorFlow运行过程，或可视化Computation Graph。TensorBoard目前支持5种可视化：标量（scalars）、图片（images）、音频（audio）、直方图（histograms）和计算图（Computation Graph）。TensorBoard的Events Dashboard可以用来持续地监控运行时的关键指标，比如loss、学习速率（learning rate）或是验证集上的准确率（accuracy）
+
+
+
+## TF 数据流图
+
+<img src="doc/pic/README/数据流图.png" alt="数据流图"  />
+
+<img src="doc/pic/README/tensors_flowing.gif" alt="tensors_flowing" style="zoom:150%;" />
+
+TensorFlow是一个采用数据流图（data flow graphs），用于数值计算的开源软件库。**节点（Operation）在图中表示数学操作，图中的线（edges）则表示在节点间相互联系的多维数据数组，即张量（tensor）。**
+
+简而言之，我们**定义的数据就是张量（Tensor）**，**节点（Operation）对数据进行操作**
+
+
+
+## TF 结构分析
+
+TensorFlow 程序通常被组织成**一个构建图阶段和一个执行图阶段**。在构建阶段，op 的执行步骤被描述成一个图。 在执行阶段, 使用会话执行执行图中的 op
+
+- **图和会话：**
+    - **图：这是 TensorFlow 将计算表示为==指令之间的依赖关系==的一种表示法**
+    - **会话：TensorFlow 跨一个或多个本地或远程设备运行数据流图的机制**
+- **张量：TensorFlow 中的基本==数据对象==**
+- **节点：提供图当中执行的==操作==**
+
 
 
 
