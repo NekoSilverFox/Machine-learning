@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7190a85b-e59c-461c-8efb-4f4ee5b77b1c" name="变更" comment="增加 TensorFlow 介绍笔记">
-      <change afterPath="$PROJECT_DIR$/500 - TF - 加法运算/500 - TF实现加法运算.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Scikit-learn.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Scikit-learn.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="7190a85b-e59c-461c-8efb-4f4ee5b77b1c" name="变更" comment="增加 TensorFlow 中实现加法运算">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/500 - TF - 加法运算/500 - TF实现加法运算.py" beforeDir="false" afterPath="$PROJECT_DIR$/500 - TF - 加法运算/500 - TF实现加法运算.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -228,14 +226,8 @@
       <workItem from="1652560347330" duration="4976000" />
       <workItem from="1653832263861" duration="30000" />
       <workItem from="1655206872807" duration="1739000" />
-      <workItem from="1655208639414" duration="459000" />
-    </task>
-    <task id="LOCAL-00020" summary="增加 回归性能评估-均方误差 MSE">
-      <created>1651661493818</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1651661493818</updated>
+      <workItem from="1655208639414" duration="4108000" />
+      <workItem from="1658061490693" duration="608000" />
     </task>
     <task id="LOCAL-00021" summary="增加 笔记-梯度下降的几种优化：&#10;&#10;常见的梯度下降算法有：&#10;&#10;- 全梯度下降算法(Full gradient descent）,&#10;- 随机梯度下降算法（Stochastic gradient descent）,&#10;- 小批量梯度下降算法（Mini-batch gradient descent）,&#10;- 随机平均梯度下降算法（Stochastic average gradient descent）">
       <created>1651662637052</created>
@@ -573,7 +565,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655206917006</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <task id="LOCAL-00069" summary="增加 TensorFlow 中实现加法运算">
+      <created>1655209276967</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1655209276967</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -592,7 +591,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="增加 SC - 轮廓系数法评估聚类效果" />
     <MESSAGE value="优化 SC - 轮廓系数法评估聚类效果笔记" />
     <MESSAGE value="增加 笔记 - “肘”方法（Elbow method）" />
     <MESSAGE value="补充 肘方法图像绘制方法" />
@@ -617,10 +615,11 @@
     <MESSAGE value="完成 线性回归lab5" />
     <MESSAGE value="增加 成绩预测" />
     <MESSAGE value="增加 TensorFlow 介绍笔记" />
-    <option name="LAST_COMMIT_MESSAGE" value="增加 TensorFlow 介绍笔记" />
+    <MESSAGE value="增加 TensorFlow 中实现加法运算" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加 TensorFlow 中实现加法运算" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Machine_learning$500___TF_.coverage" NAME="500 - TF 加法运算 覆盖结果" MODIFIED="1655209089258" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/500 - TF - 加法运算" />
+    <SUITE FILE_PATH="coverage/Machine_learning$500___TF_.coverage" NAME="500 - TF 加法运算 覆盖结果" MODIFIED="1658061500598" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/500 - TF - 加法运算" />
     <SUITE FILE_PATH="coverage/Scikit_learn$.coverage" NAME="决策树对鸢尾花分类 覆盖结果" MODIFIED="1651237639606" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/110 - 分类算法 - 决策树 - 鸢尾花分类" />
     <SUITE FILE_PATH="coverage/Scikit_learn$100___k_.coverage" NAME="100 - k-近邻算法 覆盖结果" MODIFIED="1650533443496" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/100 - 分类算法 - k-近邻算法" />
     <SUITE FILE_PATH="coverage/Scikit_learn$130___.coverage" NAME="130 - 波士顿房价预测 覆盖结果" MODIFIED="1651762835126" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/130 - 回归算法 - 线性回归 - 波士顿房价预测" />

@@ -41,6 +41,34 @@ def tensorflow_demo():
     #     print('TensorFlow 方法调用 tf_a + tf_b = ', sess.run(tf_c))
 
 
+def graph_demo():
+    """
+    图的操作
+    :return:
+    """
+    print('>>' * 50)
+
+    # 使用 TensorFlow 实现加法运算
+    tf_a = tf.constant(6)  # 定义了一个常量（张量 - tensor）
+    tf_b = tf.constant(7)
+    tf_c = tf_a + tf_b
+    print('tf_c: ', tf_c)
+
+    # 查看默认图
+    # 方法 1：调用方法
+    default_graph = tf.compat.v1.get_default_graph()
+    print('tf.get_default_graph(): ', default_graph)
+
+    # 方法 2：查看属性
+    print('tf_a.graph: ', tf_a.graph)
+    print('tf_b.graph: ', tf_b.graph)
+
+
+
 if __name__ == '__main__':
-    tensorflow_demo()
+    print(tf.__version__)
+    # tensorflow_demo()
+
+    graph_demo()
     pass
+

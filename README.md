@@ -1,7 +1,7 @@
 <p align="center">
  <img width="100px" src="https://raw.githubusercontent.com/NekoSilverFox/NekoSilverfox/403ab045b7d9adeaaf8186c451af7243f5d8f46d/icons/silverfox.svg" align="center" alt="NekoSilverfox" />
  <h1 align="center">机器学习</h2>
- <p align="center"><b>基于 scikit-learn 库</b></p>
+ <p align="center"><b>基于 Scikit-learn  & TensorFlow2</b></p>
 </p>
 
 <div align=center>
@@ -9,6 +9,7 @@
 
 [![License](https://img.shields.io/badge/license-Apache%202.0-brightgreen)](LICENSE)
 ![Library](https://img.shields.io/badge/Library-Scikit--learn-orange)
+![Library](https://img.shields.io/badge/Library-TensorFlow2.1-orange)
 ![Python](https://img.shields.io/badge/Python-3.8+-blue)
 
 
@@ -4806,7 +4807,21 @@ TensorFlow 程序通常被组织成**一个构建图阶段和一个执行图阶�
 
 
 
+## 图
 
+图包含了一组tf.Operation代表计算单元的对象和tf.Tensor代表计算单元之间流动的数据。
+
+
+
+**图中操作、会话默认属性：**
+
+默认op、sess都含有graph属性 ，都在一张图中
+
+
+
+**获取默认图：**
+
+Graph默认注册，并可通过调用访问 tf.get_default_graph，要将操作添加到默认图形中，直接创建OP即可
 
 
 
